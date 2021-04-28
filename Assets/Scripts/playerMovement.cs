@@ -8,6 +8,8 @@ public class playerMovement : MonoBehaviour
     public float speed = 100.0f;
 
 
+    private Object carryingObject = null;
+
     public float rotation_speed = 0.05f;
 
     public float collision_speed;
@@ -123,6 +125,58 @@ public class playerMovement : MonoBehaviour
 
     
 }
+
+    void OnTriggerEnter(Collider other) {
+        Debug.Log("B");
+        Debug.Log(this.carryingObject == null);
+
+        if (Input.GetKey("p"))
+        {
+            if (this.carryingObject == null)
+            {
+               // Debug.Log("Try Pick");
+                if (other.gameObject.GetComponent(typeof(Object)) != null)
+                {
+                    Debug.Log("Pick OBJECT");
+
+                    if (other.gameObject.GetComponent(typeof(Tomato)) != null)
+                    {
+                        //Debug.Log("TOMATO");
+                    }
+                    this.carryingObject = (Object)(other.gameObject.GetComponent(typeof(Object)));
+                    this.carryingObject.pick();
+                }
+            }
+        }
+        Debug.Log("E");
+        Debug.Log(this.carryingObject == null);
+
+    }
+
+
+    void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey("p"))
+        {
+            Debug.Log(carryingObject == null);
+            if (carryingObject == null)
+            {
+
+                Debug.Log("Try Pick");
+                if (other.gameObject.GetComponent(typeof(Object)) != null)
+                {
+                    Debug.Log("Pick OBJECT");
+
+                    if (other.gameObject.GetComponent(typeof(Tomato)) != null)
+                    {
+                        Debug.Log("TOMATO");
+                    }
+                    carryingObject = (Object)(other.gameObject.GetComponent(typeof(Object)));
+                    carryingObject.pick();
+                }
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -167,11 +221,7 @@ public class playerMovement : MonoBehaviour
             else if (rotation < -180) rotation = -180 - rotation;
             //if (actual_angle < 0) actual_angle += 360f;
 
-            Debug.Log("A:");
-            Debug.Log(angle);
-            Debug.Log(actual_angle);
-            Debug.Log("RES:");
-            Debug.Log(rotation);
+
             transform.eulerAngles += (new Vector3(0.0f, rotation, 0.0f)*rotation_speed);
 
             transform.position += (new Vector3(movement.x * actual_speed_x, 0.0f, movement.z * actual_speed_y) * Time.deltaTime);

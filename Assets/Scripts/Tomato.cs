@@ -6,7 +6,13 @@ public class Tomato : Food
 {
 
 
-    public override void pick()
+    public override Object pick()
+    {
+        this.gameObject.transform.position = new Vector3(0, -100, 0);
+        StartCoroutine(Deactivate());
+        return this;
+    }
+    public override void leave(Object o)
     {
 
     }
