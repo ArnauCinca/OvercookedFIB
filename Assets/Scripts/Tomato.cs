@@ -4,34 +4,25 @@ using UnityEngine;
 
 public class Tomato : Object
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+    public override void pick()
+    {
+
+    }
+    public override void cut()
+    {
+
+    }
+    public override void cook_oven()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void cook_stove()
     {
 
     }
 
-    void pick()
-    {
-
-    }
-    void cut()
-    {
-
-    }
-    void cook_oven()
-    {
-
-    }
-
-    void cook_stove()
-    {
-
-    }
 }
 
