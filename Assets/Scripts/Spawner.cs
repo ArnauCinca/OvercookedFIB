@@ -2,38 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : Furniture
 {
-    public GameObject o;
-    private GameObject s;
-    private Vector3 o_pos;
-    bool wait = false;
+    public GameObject s;
     // Start is called before the first frame update
     void Start()
     {
-        o_pos = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
-        s = Instantiate(o, o_pos, Quaternion.identity);
-
+        StartCoroutine(Spawn(0.1f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!wait &&  s.transform.position != o_pos) {
-            Debug.Log("Spawn");
-            s = null;
-            StartCoroutine(Spawn());
 
-        }
     }
 
-    protected IEnumerator Spawn()
+    public override Object pick() {
+        Object ret = (Object)o.GetComponent(typeof(Object));
+        o = null;
+        StartCoroutine(Spawn(3.0f));
+        return ret;
+    }
+
+    public override bool leave(Object o) {
+        return false;
+    }
+
+
+    protected IEnumerator Spawn(float delay)
     {
-        wait = true;
-        yield return new WaitForSeconds(5.0f);
-        o_pos = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
-        s = Instantiate(o, o_pos, Quaternion.identity);
-        wait = false;
+        Debug.Log("Spawn");
+        yield return new WaitForSeconds(delay);
+        o = Instantiate(s, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
     }
 
 }
