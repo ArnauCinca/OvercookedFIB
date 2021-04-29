@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3999396222521553835}
   - component: {fileID: 6436477040429886653}
   - component: {fileID: 5502298343761881853}
-  - component: {fileID: 3835037593010358687}
   m_Layer: 0
   m_Name: Meat
   m_TagString: Untagged
@@ -97,16 +96,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!65 &3835037593010358687
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5854617635132862720}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 2}
-  m_Center: {x: 0, y: 0, z: -0.5}
