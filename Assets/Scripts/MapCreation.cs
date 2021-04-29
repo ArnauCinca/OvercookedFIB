@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class MapCreation : MonoBehaviour
 {
-    private enum TileSpace {Empty, Path, Table, FakeTable, Deliver, Oven_Stove };
+    private enum TileSpace {Empty, Path, Table, FakeTable, Deliver, Oven, Stove };
     private TileSpace[][] map;
     public GameObject Table;
     public GameObject Deliver;
-    public GameObject Oven_Stove;
+    public GameObject Oven;
+    public GameObject Stove;
+
     public GameObject Player;
 
     public int trys = 1;
 
-    public int n_oven_stove = 5;
+    public int n_oven = 5;
+    public int n_stove = 5;
+
 
     public int x_size = 10;
     public int y_size = 5;
@@ -91,9 +95,10 @@ public class MapCreation : MonoBehaviour
 
         //Generate Ovens
         generateOvens();
+        //Generate Ovens
+        generateStoves();
 
-        
- 
+
 
         //Spawn & rotations
         for (int i = 0; i<x_size; ++i)
@@ -114,8 +119,11 @@ public class MapCreation : MonoBehaviour
                     case TileSpace.Deliver:
                         Instantiate(Deliver, new Vector3(i * 2.0f - x_size, 1.0f, j * 2.0f - y_size), Quaternion.identity);
                         break;
-                    case TileSpace.Oven_Stove:
-                        Instantiate(Oven_Stove, new Vector3(i * 2.0f - x_size, 1.0f, j * 2.0f - y_size), Quaternion.identity);
+                    case TileSpace.Oven:
+                        Instantiate(Oven, new Vector3(i * 2.0f - x_size, 1.0f, j * 2.0f - y_size), Quaternion.identity);
+                        break;
+                    case TileSpace.Stove:
+                        Instantiate(Stove, new Vector3(i * 2.0f - x_size, 1.0f, j * 2.0f - y_size), Quaternion.identity);
                         break;
                 }
             }
@@ -207,10 +215,10 @@ public class MapCreation : MonoBehaviour
 
     void generateOvens()
     {
-        int max_oven_stove = n_oven_stove;
+        int max_oven = n_oven;
 
 
-        while (n_oven_stove > max_oven_stove/3)
+        while (n_oven > max_oven/3)
         {
             int first_oven = Random.Range(0, x_size * y_size);
             int x = 1;
@@ -225,16 +233,49 @@ public class MapCreation : MonoBehaviour
                     --first_oven;
                 }
             }
-            setMap(x, y, TileSpace.Oven_Stove);
-            --n_oven_stove;
-            if (n_oven_stove > 0)
+            setMap(x, y, TileSpace.Oven);
+            --n_oven;
+            if (n_oven > 0)
                 addOven(x + 1, y);
-            if (n_oven_stove > 0)
+            if (n_oven > 0)
                 addOven(x - 1, y);
-            if (n_oven_stove > 0)
+            if (n_oven > 0)
                 addOven(x, y + 1);
-            if (n_oven_stove > 0)
+            if (n_oven > 0)
                 addOven(x, y - 1);
+        }
+    }
+
+    void generateStoves()
+    {
+        int max_stove = n_stove;
+
+
+        while (n_stove > max_stove / 3)
+        {
+            int first_stove = Random.Range(0, x_size * y_size);
+            int x = 1;
+            int y = 1;
+            while (first_stove > 0)
+            {
+
+                x = (x + 1) % x_size;
+                if (x == 1) y = (y + 1) % y_size;
+                if (getMap(x, y) == TileSpace.Table)
+                {
+                    --first_stove;
+                }
+            }
+            setMap(x, y, TileSpace.Stove);
+            --n_stove;
+            if (n_stove > 0)
+                addStove(x + 1, y);
+            if (n_stove > 0)
+                addStove(x - 1, y);
+            if (n_stove > 0)
+                addStove(x, y + 1);
+            if (n_stove > 0)
+                addStove(x, y - 1);
         }
     }
 
@@ -350,14 +391,27 @@ public class MapCreation : MonoBehaviour
 
     void addOven(int x, int y)
     {
-        if (n_oven_stove <= 0 || getMap(x, y) != TileSpace.Table ) return;
+        if (n_oven <= 0 || getMap(x, y) != TileSpace.Table ) return;
 
-        setMap(x, y, TileSpace.Oven_Stove);
-        --n_oven_stove;
+        setMap(x, y, TileSpace.Oven);
+        --n_oven;
         addOven(x, y + 1);
         addOven(x, y - 1);
         addOven(x + 1, y);
         addOven(x - 1, y);
+
+    }
+
+    void addStove(int x, int y)
+    {
+        if (n_stove <= 0 || getMap(x, y) != TileSpace.Table) return;
+
+        setMap(x, y, TileSpace.Stove);
+        --n_stove;
+        addStove(x, y + 1);
+        addStove(x, y - 1);
+        addStove(x + 1, y);
+        addStove(x - 1, y);
 
     }
 }

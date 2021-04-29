@@ -318,10 +318,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Table: {fileID: 5883310671210630253, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
   Deliver: {fileID: 2785785485450732976, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
-  Oven_Stove: {fileID: 2336531051411964369, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
+  Oven: {fileID: 2336531051411964369, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
+  Stove: {fileID: 1549549026932707107, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
   Player: {fileID: 1191461109905041168, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
   trys: 1
-  n_oven_stove: 3
+  n_oven: 5
+  n_stove: 5
   x_size: 20
   y_size: 10
   min_path: 30
