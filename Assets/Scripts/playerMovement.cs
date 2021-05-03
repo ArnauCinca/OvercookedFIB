@@ -8,8 +8,9 @@ public class playerMovement : MonoBehaviour
     public float speed = 100.0f;
 
 
-    private Object carryingObject = null;
-
+    private GameObject carryingObject = null;
+    private bool delayInteraction = false;
+    public float delay = 0.5f;
     public float rotation_speed = 0.05f;
 
     public float collision_speed;
@@ -124,58 +125,49 @@ public class playerMovement : MonoBehaviour
         if (!h) actual_speed_y = speed;
 
     
-}
+    }
 
-    void OnTriggerEnter(Collider other) {
-        Debug.Log("B");
-        Debug.Log(this.carryingObject == null);
+    void interaction(GameObject go)
+    {
+        if (!delayInteraction) { 
 
-        if (Input.GetKey("p"))
-        {
-            if (this.carryingObject == null)
+
+            if (Input.GetKey("p") && go.GetComponent(typeof(Furniture)) != null)
             {
-               // Debug.Log("Try Pick");
-                if (other.gameObject.GetComponent(typeof(Object)) != null)
-                {
-                    Debug.Log("Pick OBJECT");
+                delayInteraction = true;
+                StartCoroutine(Delay(delay));
+                Debug.Log("SD");
+                Debug.Log("FURNITURE");
 
-                    if (other.gameObject.GetComponent(typeof(Tomato)) != null)
-                    {
-                        //Debug.Log("TOMATO");
-                    }
-                    this.carryingObject = (Object)(other.gameObject.GetComponent(typeof(Object)));
-                    this.carryingObject.pick();
+                if (carryingObject == null) //pick
+                {
+                    Debug.Log("PICK");
+                    carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
                 }
+
+                else //leave
+                {
+                    Debug.Log("LEAVE");
+                    bool l = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
+                    if (l) carryingObject = null;
+
+                }
+                
             }
         }
-        Debug.Log("E");
-        Debug.Log(this.carryingObject == null);
+    }
+
+    void OnTriggerEnter(Collider other) 
+    {
+
+        interaction(other.gameObject);
 
     }
 
 
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey("p"))
-        {
-            Debug.Log(carryingObject == null);
-            if (carryingObject == null)
-            {
-
-                Debug.Log("Try Pick");
-                if (other.gameObject.GetComponent(typeof(Object)) != null)
-                {
-                    Debug.Log("Pick OBJECT");
-
-                    if (other.gameObject.GetComponent(typeof(Tomato)) != null)
-                    {
-                        Debug.Log("TOMATO");
-                    }
-                    carryingObject = (Object)(other.gameObject.GetComponent(typeof(Object)));
-                    carryingObject.pick();
-                }
-            }
-        }
+        interaction(other.gameObject);
     }
     // Update is called once per frame
     void Update()
@@ -227,6 +219,18 @@ public class playerMovement : MonoBehaviour
             transform.position += (new Vector3(movement.x * actual_speed_x, 0.0f, movement.z * actual_speed_y) * Time.deltaTime);
 
         }
+        if (carryingObject != null) carryingObject.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
+
 
     }
+
+    protected IEnumerator Delay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        delayInteraction = false;
+        Debug.Log("ED");
+
+    }
+
+
 }

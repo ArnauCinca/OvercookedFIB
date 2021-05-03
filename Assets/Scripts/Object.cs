@@ -16,12 +16,6 @@ abstract public class Object : MonoBehaviour
 
     }
 
-    public abstract Object pick();
-    public abstract void leave(Object o);
-
-    protected IEnumerator Deactivate()
-    {
-        yield return new WaitForSeconds(0.1f);
-        this.gameObject.SetActive(false);
-    }
+    public abstract GameObject pick();
+    public abstract void leave(Vector3 pos);
 }

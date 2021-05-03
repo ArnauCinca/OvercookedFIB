@@ -5,7 +5,7 @@ using UnityEngine;
 abstract public class Furniture : MonoBehaviour
 {
     protected GameObject o;
-    public abstract Object pick();
-    public abstract bool leave(Object o);
+    public abstract GameObject pick();
+    public abstract bool leave(GameObject o);
 
 }

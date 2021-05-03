@@ -17,14 +17,14 @@ public class Spawner : Furniture
 
     }
 
-    public override Object pick() {
-        Object ret = (Object)o.GetComponent(typeof(Object));
+    public override GameObject pick() {
+        GameObject ret = o;
         o = null;
         StartCoroutine(Spawn(3.0f));
         return ret;
     }
 
-    public override bool leave(Object o) {
+    public override bool leave(GameObject o) {
         return false;
     }
 
