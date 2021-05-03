@@ -14,18 +14,18 @@ public class Tomato : Food
     {
         transform.position = pos;
     }
-    public override void cut()
+    public override bool cut()
     {
-
+        return false;
     }
-    public override void cook_oven()
+    public override bool cook_oven()
     {
-
+        return false;
     }
 
-    public override void cook_stove()
+    public override bool cook_stove()
     {
-
+        return false;
     }
 
 }

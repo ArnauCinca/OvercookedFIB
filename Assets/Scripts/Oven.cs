@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : Furniture
+public class Oven : Furniture
 {
     // Start is called before the first frame update
     void Start()
@@ -25,14 +25,14 @@ public class Table : Furniture
 
     public override bool leave(GameObject ob)
     {
-        if (o != null) return false; //for now... (if tere are a utensil atach to it)
-
+        if (o != null) return false;
+        //if can cook_oven or not
         o = ob;
-        ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f,1.5f,0.0f));
+        ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.5f, 0.0f));
         return true;
     }
     public override bool action()
     {
-        return false; //for now... (if there are a utensil atach to it)
+        return ((Object)o.GetComponent(typeof(Object))).cook_oven();
     }
 }

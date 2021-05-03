@@ -28,12 +28,15 @@ public class Spawner : Furniture
         return false;
     }
 
+    public override bool action()
+    {
+        return false;
+    }
 
     protected IEnumerator Spawn(float delay)
     {
-        Debug.Log("Spawn");
         yield return new WaitForSeconds(delay);
-        o = Instantiate(s, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
+        o = Instantiate(s, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
     }
 
 }
