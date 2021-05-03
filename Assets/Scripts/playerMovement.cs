@@ -136,18 +136,13 @@ public class playerMovement : MonoBehaviour
             {
                 delayInteraction = true;
                 StartCoroutine(Delay(delay));
-                Debug.Log("SD");
-                Debug.Log("FURNITURE");
-
                 if (carryingObject == null) //pick
                 {
-                    Debug.Log("PICK");
                     carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
                 }
 
                 else //leave
                 {
-                    Debug.Log("LEAVE");
                     bool l = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
                     if (l) carryingObject = null;
 
@@ -169,7 +164,7 @@ public class playerMovement : MonoBehaviour
     {
         interaction(other.gameObject);
     }
-    // Update is called once per frame
+
     void Update()
     {
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
@@ -200,22 +195,13 @@ public class playerMovement : MonoBehaviour
         {
             float angle = Mathf.Atan2(movement.x, movement.z) / Mathf.PI * 180f;
             if (angle < 0) angle += 360f;
-
-            // 0 -> 0
-            //180 -> +- 1
-
-            //angle = angle / 180.0f;
             float actual_angle = transform.eulerAngles.y;
-
 
             float rotation = angle - actual_angle;
             if (rotation > 180) rotation = 180 - rotation;
             else if (rotation < -180) rotation = -180 - rotation;
-            //if (actual_angle < 0) actual_angle += 360f;
-
 
             transform.eulerAngles += (new Vector3(0.0f, rotation, 0.0f)*rotation_speed);
-
             transform.position += (new Vector3(movement.x * actual_speed_x, 0.0f, movement.z * actual_speed_y) * Time.deltaTime);
 
         }
@@ -228,8 +214,6 @@ public class playerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         delayInteraction = false;
-        Debug.Log("ED");
-
     }
 
 
