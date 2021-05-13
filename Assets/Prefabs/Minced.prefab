@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2336531051411964369
+--- !u!1 &2678962590486468226
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3216832546407289486}
-  - component: {fileID: 4141417765121601822}
-  - component: {fileID: 6068518306460843199}
-  - component: {fileID: 2699523812999543119}
-  - component: {fileID: 2109619730036188522}
+  - component: {fileID: 7568606770191761233}
+  - component: {fileID: 1455557080211426545}
+  - component: {fileID: 9032039037232339115}
+  - component: {fileID: 496561558078691634}
+  - component: {fileID: 1332140077107466291}
   m_Layer: 0
-  m_Name: Oven
-  m_TagString: Furniture
+  m_Name: Minced
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3216832546407289486
+--- !u!4 &7568606770191761233
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336531051411964369}
+  m_GameObject: {fileID: 2678962590486468226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9, y: 2, z: 1.9}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.1, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4141417765121601822
+--- !u!33 &1455557080211426545
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336531051411964369}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6068518306460843199
+  m_GameObject: {fileID: 2678962590486468226}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &9032039037232339115
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336531051411964369}
+  m_GameObject: {fileID: 2678962590486468226}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df535a101d684194fbcc2de129807843, type: 2}
+  - {fileID: 2100000, guid: bd3ad91811104da46a5199caf1c0ae55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,29 +83,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2699523812999543119
+--- !u!114 &496561558078691634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336531051411964369}
+  m_GameObject: {fileID: 2678962590486468226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6517273a945a4f48a94cd01a7a3f8cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 493f3f8cd5e1b0a42bb4d4937c0589b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Oven_Tray: {fileID: 2391269316347455263, guid: dd34666f0e47a8446a810822a6faefe2, type: 3}
---- !u!65 &2109619730036188522
-BoxCollider:
+  Cutted_Food: {fileID: 0}
+  Stove_Food: {fileID: 3311695090627731320, guid: bb313a9ba8f1f2542bf82b065da39e1a, type: 3}
+  Oven_Food: {fileID: 0}
+  deliverable: 0
+--- !u!136 &1332140077107466291
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2336531051411964369}
+  m_GameObject: {fileID: 2678962590486468226}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1, y: 1, z: 1.1}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

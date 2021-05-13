@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2971053265790515672}
   m_Layer: 0
   m_Name: SpawnerTomato
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

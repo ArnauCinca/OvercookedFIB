@@ -18,7 +18,5 @@ abstract public class Object : MonoBehaviour
 
     public abstract GameObject pick();
     public abstract void leave(Vector3 pos);
-    public abstract bool cut();
-    public abstract bool cook_oven();
-    public abstract bool cook_stove();
+
 }

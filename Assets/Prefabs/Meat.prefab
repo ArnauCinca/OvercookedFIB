@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4179517330770476858}
   - component: {fileID: 3999396222521553835}
   - component: {fileID: 6436477040429886653}
+  - component: {fileID: -3088284608176835123}
   - component: {fileID: 5502298343761881853}
-  - component: {fileID: 2254573641612492978}
   m_Layer: 0
   m_Name: Meat
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +83,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3088284608176835123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5854617635132862720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493f3f8cd5e1b0a42bb4d4937c0589b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cutted_Food: {fileID: 4468927999932666046, guid: f4b362a5c5dbbc14ca43595072b918d8, type: 3}
+  Stove_Food: {fileID: 0}
+  Oven_Food: {fileID: 0}
+  deliverable: 0
 --- !u!136 &5502298343761881853
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -97,15 +113,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &2254573641612492978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5854617635132862720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d8d5ff19ff0c54fb1c80e832a9f989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

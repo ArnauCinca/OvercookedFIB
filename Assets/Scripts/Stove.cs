@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : Furniture
+public class Stove : Furniture
 {
+    public GameObject Pan;
+
     // Start is called before the first frame update
     void Start()
     {
+        o = Instantiate(Pan, new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), Quaternion.identity);
 
     }
 
@@ -70,7 +73,7 @@ public class Table : Furniture
 
     public override bool action()
     {
-        if(o == null || o.GetComponent(typeof(Cutter)) == null) return false; //for now... (if there are a utensil attach to it)
-        return ((Utensil)o.GetComponent(typeof(Cutter))).action();
+        if (o == null || o.GetComponent(typeof(Pan)) == null) return false; //for now... (if there are a utensil attach to it)
+        return ((Utensil)o.GetComponent(typeof(Pan))).action();
     }
 }

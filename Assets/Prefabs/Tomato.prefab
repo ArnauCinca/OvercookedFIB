@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 6537276107211228843}
   - component: {fileID: 6981531393952304484}
   - component: {fileID: 3920162262071505591}
-  - component: {fileID: 8853455663072330036}
+  - component: {fileID: 590455044352852186}
   - component: {fileID: 5746566819815990381}
   m_Layer: 0
   m_Name: Tomato
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8853455663072330036
+--- !u!114 &590455044352852186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,9 +92,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2472841683608515836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d8d5ff19ff0c54fb1c80e832a9f989, type: 3}
+  m_Script: {fileID: 11500000, guid: 493f3f8cd5e1b0a42bb4d4937c0589b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cutted_Food: {fileID: 7573863407561210146, guid: cfcdbc6d49212c34bb5309f2842bb824, type: 3}
+  Stove_Food: {fileID: 0}
+  Oven_Food: {fileID: 0}
+  deliverable: 0
 --- !u!135 &5746566819815990381
 SphereCollider:
   m_ObjectHideFlags: 0
