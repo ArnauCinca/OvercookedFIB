@@ -9,7 +9,7 @@ public class Food : Object
     public GameObject Stove_Food;
     public GameObject Oven_Food;
     public bool deliverable;
-
+    //public bool needPlate; TODO
 
     public override GameObject pick()
     {
