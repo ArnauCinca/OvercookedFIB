@@ -2,19 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : Furniture
+public class Stove : Furniture
 {
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public override GameObject pick()
     {
@@ -70,7 +61,7 @@ public class Table : Furniture
 
     public override bool action()
     {
-        if(o == null || o.GetComponent(typeof(Cutter)) == null) return false; //for now... (if there are a utensil attach to it)
-        return ((Utensil)o.GetComponent(typeof(Cutter))).action();
+        if (o == null || o.GetComponent(typeof(Pan)) == null) return false; //for now... (if there are a utensil attach to it)
+        return ((Utensil)o.GetComponent(typeof(Pan))).action();
     }
 }

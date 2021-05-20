@@ -2,22 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stove : Furniture
+public class Oven : Furniture
 {
-    public GameObject Pan;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        o = Instantiate(Pan, new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), Quaternion.identity);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public override GameObject pick()
     {
@@ -73,7 +60,7 @@ public class Stove : Furniture
 
     public override bool action()
     {
-        if (o == null || o.GetComponent(typeof(Pan)) == null) return false; //for now... (if there are a utensil attach to it)
-        return ((Utensil)o.GetComponent(typeof(Pan))).action();
+        if (o == null || o.GetComponent(typeof(Oven_Tray)) == null) return false; //for now... (if there are a utensil attach to it)
+        return ((Utensil)o.GetComponent(typeof(Oven_Tray))).action();
     }
 }

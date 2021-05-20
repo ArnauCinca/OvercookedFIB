@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spawner : Furniture
 {
-    public GameObject s;
     // Start is called before the first frame update
-    void Start()
+ /*   void Start()
     {
+        //Can't be null
         StartCoroutine(Spawn(0.1f));
     }
 
@@ -15,7 +15,7 @@ public class Spawner : Furniture
     void Update()
     {
 
-    }
+    }*/
 
     public override GameObject pick() {
         GameObject ret = o;
@@ -36,7 +36,7 @@ public class Spawner : Furniture
     protected IEnumerator Spawn(float delay)
     {
         yield return new WaitForSeconds(delay);
-        o = Instantiate(s, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
+        o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
     }
 
 }
