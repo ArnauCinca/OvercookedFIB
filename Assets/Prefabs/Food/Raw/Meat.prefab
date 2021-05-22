@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 493f3f8cd5e1b0a42bb4d4937c0589b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cutted_Food: {fileID: 7573863407561210146, guid: cfcdbc6d49212c34bb5309f2842bb824, type: 3}
+  Cutted_Food: {fileID: 4468927999932666046, guid: f4b362a5c5dbbc14ca43595072b918d8, type: 3}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
   deliverable: 0
