@@ -36,7 +36,7 @@ public class Spawner : Furniture
     protected IEnumerator Spawn(float delay)
     {
         yield return new WaitForSeconds(delay);
-        o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
+        o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
     }
 
 }

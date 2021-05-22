@@ -15,14 +15,10 @@ public class playerMovement : MonoBehaviour
 
     public float collision_speed;
 
-    //private Dictionary<int, float> colliders;
-
     public float actual_speed_x, actual_speed_y;
     // Start is called before the first frame update
     void Start()
     {
-        //colliders = new Dictionary<int, float>();
-        m_Rigidbody = GetComponent<Rigidbody>();
         collision_speed = speed / 10.0f;
         actual_speed_x = speed;
         actual_speed_y = speed;
@@ -156,8 +152,6 @@ public class playerMovement : MonoBehaviour
                     delayInteraction = true;
                     StartCoroutine(Delay(delay));
                     ((Furniture)go.GetComponent(typeof(Furniture))).action();
-
-
                 }
             }
         }
@@ -165,28 +159,17 @@ public class playerMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-       //colliders.Add(other.GetInstanceID(), 1.0f);// other.bounds.size.x * other.bounds.size.y * other.bounds.size.z);
-        //Debug.Log("Collider Size : " + other.contactOffset);
-
         interaction(other.gameObject);
-
     }
-
-
     void OnTriggerStay(Collider other)
     {
-
-        //colliders[other.GetInstanceID()] =  other.bounds.size.x * other.bounds.size.y * other.bounds.size.z;
-        //Debug.Log("Collider Size : " + other.contactOffset);
-
         interaction(other.gameObject);
     }
     void OnTriggerExit(Collider other)
     {
-        //if (other == null) return;
 
-        //colliders.Remove(other.GetInstanceID());
     }
+
     void Update()
     {
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);

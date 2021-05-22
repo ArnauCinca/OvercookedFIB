@@ -11,7 +11,7 @@ abstract public class Furniture : MonoBehaviour
     void Start()
     {
         if (spawnObject != null)
-            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.05f, transform.position.z), Quaternion.identity);
+            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
     }
 
     // Update is called once per frame

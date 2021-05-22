@@ -17,7 +17,7 @@ public class Food : Object
     }
     public override void leave(Vector3 pos)
     {
-        transform.position = pos + new Vector3(0.0f, 0.5f, 0.0f);
+        transform.position = pos;
     }
 
 

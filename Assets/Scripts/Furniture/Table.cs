@@ -8,7 +8,7 @@ public class Table : Furniture
     public override GameObject pick()
     {
         GameObject ret = null;
-        if (o == null) return null;
+        if (o == null) return ret;
         //food
         if (o.GetComponent(typeof(Food)) != null)
         {
@@ -26,8 +26,6 @@ public class Table : Furniture
                 ret = o;
                 o = null;
             }
-
-
         }
         return ret;
     }

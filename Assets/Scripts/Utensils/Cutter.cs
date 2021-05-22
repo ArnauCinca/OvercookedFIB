@@ -12,7 +12,7 @@ public class Cutter : Utensil
     }
     public override void leave(Vector3 pos)
     {
-        transform.position = pos + new Vector3(0.0f, 0.05f, 0.0f);
+        transform.position = pos;
     }
 
 
@@ -29,7 +29,7 @@ public class Cutter : Utensil
     {
         if(go != null) return false;
         go = o;
-        ((Food)go.GetComponent(typeof(Food))).leave(transform.position);
+        ((Food)go.GetComponent(typeof(Food))).leave(transform.position + new Vector3(0.0f, 0.05f, 0.0f));
         return true;
     }
 
