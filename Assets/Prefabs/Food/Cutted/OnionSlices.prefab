@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 2119170186308900020}
   - component: {fileID: 8499545398777081651}
   m_Layer: 0
-  m_Name: OnionRings
+  m_Name: OnionSlices
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cutted_Food: {fileID: 6280973956695050083, guid: 2d7ca7794d286134486750eabb429401, type: 3}
-  Stove_Food: {fileID: 0}
+  Stove_Food: {fileID: 2948047847231719054, guid: 22dfd17ded6d2514199325dd0fc6e9f7, type: 3}
   Oven_Food: {fileID: 0}
   deliverable: 0
 --- !u!136 &8499545398777081651

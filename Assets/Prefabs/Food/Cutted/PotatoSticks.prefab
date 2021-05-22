@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cutted_Food: {fileID: 0}
-  Stove_Food: {fileID: 0}
+  Stove_Food: {fileID: 4550431305239042959, guid: bddb65cf15dced64fb5e5ed26a2ac397, type: 3}
   Oven_Food: {fileID: 0}
   deliverable: 0
 --- !u!136 &8403739412067780646
