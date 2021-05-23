@@ -2777,6 +2777,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
+--- !u!114 &1553174608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1191461109905041169, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
+  m_PrefabInstance: {fileID: 1690911733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebaef8b16a6cd24f905a71635a42c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1558556564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3355,10 +3366,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1664268049}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1553174608}
+        m_TargetAssemblyTypeName: playerMovement, Assembly-CSharp
+        m_MethodName: Unpause
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -6,11 +6,11 @@ public class playerMovement : MonoBehaviour
 {
     public float speed = 100.0f;
     public  GameObject pm;
+    bool pause = false;
     private GameObject carryingObject = null;
     private bool delayInteraction = false;
-    public float delay = 0.5f;
-    public float rotation_speed = 0.05f;
-
+    public float delay = 0.2f;
+    public float rotation_speed = 5.0f;
 
 
     public float collision_speed;
@@ -128,7 +128,7 @@ public class playerMovement : MonoBehaviour
 
     void interaction(GameObject go)
     {
-        if (!delayInteraction) {
+        if (!delayInteraction && !pause) {
             if (go.CompareTag("Furniture"))
             {
                 if (Input.GetKey("p"))
@@ -170,11 +170,26 @@ public class playerMovement : MonoBehaviour
 
     }
 
+    public void Pause() {
+        pause = true;
+        Time.timeScale = pause ? 0.0f : 1.0f;
+        pm.gameObject.SetActive(pause);
+    }
+
+    public void Unpause()
+    {
+        pause = false;
+        Time.timeScale = pause ? 0.0f : 1.0f;
+        pm.gameObject.SetActive(pause);
+    }
+
     void Update()
     {
-        if (Input.GetKey("escape")) {
-            pm.gameObject.SetActive(true);
+        if (Input.GetKey("escape"))
+        {
+            Pause();
         }
+        
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
         bool move = false;
         if (Input.GetKey("w")) {
@@ -209,7 +224,7 @@ public class playerMovement : MonoBehaviour
             if (rotation > 180) rotation = 180 - rotation;
             else if (rotation < -180) rotation = -180 - rotation;
 
-            transform.eulerAngles += (new Vector3(0.0f, rotation, 0.0f)*rotation_speed);
+            transform.eulerAngles += (new Vector3(0.0f, rotation, 0.0f) * rotation_speed * Time.deltaTime);
             transform.position += (new Vector3(movement.x * actual_speed_x, 0.0f, movement.z * actual_speed_y) * Time.deltaTime);
 
         }
