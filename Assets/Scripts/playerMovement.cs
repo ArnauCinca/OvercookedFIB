@@ -172,22 +172,29 @@ public class playerMovement : MonoBehaviour
 
     public void Pause() {
         pause = true;
-        Time.timeScale = pause ? 0.0f : 1.0f;
+        Time.timeScale = 0.0f;
         pm.gameObject.SetActive(pause);
     }
 
     public void Unpause()
     {
         pause = false;
-        Time.timeScale = pause ? 0.0f : 1.0f;
+        Time.timeScale = 1.0f;
         pm.gameObject.SetActive(pause);
     }
 
     void Update()
     {
-        if (Input.GetKey("escape"))
+        if (Input.GetKeyDown("escape"))
         {
-            Pause();
+            if (pause)
+            {
+                Unpause();
+            }
+            else
+            {
+                Pause();
+            }
         }
         
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
