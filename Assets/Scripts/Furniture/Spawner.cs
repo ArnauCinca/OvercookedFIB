@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class Spawner : Furniture
 {
-    // Start is called before the first frame update
- /*   void Start()
-    {
-        //Can't be null
-        StartCoroutine(Spawn(0.1f));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }*/
 
     public override GameObject pick() {
         GameObject ret = o;
