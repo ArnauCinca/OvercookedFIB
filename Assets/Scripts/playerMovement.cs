@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    Rigidbody m_Rigidbody;
     public float speed = 100.0f;
-
-
+    public  GameObject pm;
     private GameObject carryingObject = null;
     private bool delayInteraction = false;
     public float delay = 0.5f;
     public float rotation_speed = 0.05f;
+
+
 
     public float collision_speed;
 
@@ -172,6 +172,9 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey("escape")) {
+            pm.gameObject.SetActive(true);
+        }
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
         bool move = false;
         if (Input.GetKey("w")) {
