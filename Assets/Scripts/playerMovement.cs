@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
     public float speed = 100.0f;
-    public  GameObject pm;
+    public GameObject pm;
+    public GameObject ui;
+
     bool pause = false;
     private GameObject carryingObject = null;
     private bool delayInteraction = false;
     public float delay = 0.2f;
     public float rotation_speed = 5.0f;
 
-
+    int lives = 3;
     public float collision_speed;
 
     public float actual_speed_x, actual_speed_y;
@@ -25,6 +28,14 @@ public class playerMovement : MonoBehaviour
         transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
 
 
+    }
+
+   public void loseLive() {
+        lives--;
+        if (lives <= 0) {
+            SceneManager.LoadScene(0);
+            //LoseGame TODO
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -174,6 +185,7 @@ public class playerMovement : MonoBehaviour
         pause = true;
         Time.timeScale = 0.0f;
         pm.gameObject.SetActive(pause);
+        ui.gameObject.SetActive(!pause);
     }
 
     public void Unpause()
@@ -181,6 +193,7 @@ public class playerMovement : MonoBehaviour
         pause = false;
         Time.timeScale = 1.0f;
         pm.gameObject.SetActive(pause);
+        ui.gameObject.SetActive(!pause);
     }
 
     void Update()
@@ -238,6 +251,13 @@ public class playerMovement : MonoBehaviour
         if (carryingObject != null) carryingObject.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
 
 
+        //RENDER LIVES
+        if (lives >= 1) ui.transform.GetChild(0).gameObject.SetActive(true);
+        else ui.transform.GetChild(0).gameObject.SetActive(false);
+        if (lives >= 2) ui.transform.GetChild(1).gameObject.SetActive(true);
+        else ui.transform.GetChild(1).gameObject.SetActive(false);
+        if (lives >= 3) ui.transform.GetChild(2).gameObject.SetActive(true);
+        else ui.transform.GetChild(2).gameObject.SetActive(false);
     }
 
     protected IEnumerator Delay(float delay)
