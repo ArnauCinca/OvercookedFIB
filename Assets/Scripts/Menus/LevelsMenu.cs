@@ -11,6 +11,7 @@ public class LevelsMenu : MonoBehaviour
     }
     public void LoadLevel2()
     {
+        SceneManager.LoadScene(2);
 
     }
     public void LoadLevel3()
