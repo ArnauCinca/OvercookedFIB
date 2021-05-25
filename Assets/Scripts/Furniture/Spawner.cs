@@ -6,8 +6,7 @@ public class Spawner : Furniture
 {
 
     public override GameObject pick() {
-        GameObject ret = o;
-        o = null;
+        GameObject ret = base.pick();
         StartCoroutine(Spawn(3.0f));
         return ret;
     }

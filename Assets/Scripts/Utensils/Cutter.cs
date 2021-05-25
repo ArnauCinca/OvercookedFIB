@@ -4,26 +4,10 @@ using UnityEngine;
 
 public class Cutter : Utensil
 {
-
-
-    public override GameObject pick()
-    {
-        return gameObject;
-    }
     public override void leave(Vector3 pos)
     {
         transform.position = pos;
     }
-
-
-    public override GameObject get() 
-    {
-        if (go == null) return null;
-        GameObject ret = ((Food)go.GetComponent(typeof(Food))).pick();
-        go = null;
-        return ret;
-    }
-
 
     public override bool put(GameObject o)
     {

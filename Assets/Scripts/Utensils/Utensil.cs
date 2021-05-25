@@ -7,11 +7,40 @@ abstract public class Utensil : Object
 
     protected GameObject go;
 
-    public abstract override GameObject pick();
-    public abstract override void leave(Vector3 pos);
+    public override GameObject pick()
+    {
+        return gameObject;
+    }
 
-    public abstract GameObject get();
-    public abstract bool put(GameObject o);
+    public override void leave(Vector3 pos)
+    {
+        transform.position = pos + new Vector3(0.0f, 0.05f, 0.0f);
+        if (go != null) ((Food)go.GetComponent(typeof(Food))).leave(pos);
+    }
+
+    public GameObject getOut()
+    {
+        if (go == null) return null;
+        GameObject ret = ((Food)go.GetComponent(typeof(Food))).pick();
+        go = null;
+        return ret;
+    }
+
+    public GameObject get()
+    {
+        if (go == null) return null;
+        GameObject ret = ((Food)go.GetComponent(typeof(Food))).pick();
+        return ret;
+    }
+
+    public virtual bool put(GameObject o)
+    {
+        if (go != null) return false;
+        go = o;
+        ((Food)go.GetComponent(typeof(Food))).leave(transform.position);
+        return true;
+    }
+
     public abstract bool action();
 
 }

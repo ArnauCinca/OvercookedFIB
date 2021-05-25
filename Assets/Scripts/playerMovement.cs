@@ -146,15 +146,42 @@ public class playerMovement : MonoBehaviour
                 {
                     delayInteraction = true;
                     StartCoroutine(Delay(delay));
-                    if (carryingObject == null) //pick
+                    GameObject furnitureGO = ((Furniture)go.GetComponent(typeof(Furniture))).getObject();
+                    // Player doesn't carry anything
+                    if (carryingObject == null)
                     {
-                        carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
+                        if (furnitureGO != null && furnitureGO.GetComponent(typeof(Utensil)) != null) {
+                            carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
+                        }
+                    // Player has utensil without food
+                    } else if (carryingObject.GetComponent(typeof(Utensil)) != null &&  ((Utensil)carryingObject.GetComponent(typeof(Utensil))).get() == null) {
+                        if (furnitureGO == null) {
+                            ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
+                            carryingObject = null;
+                        } else if (furnitureGO.GetComponent(typeof(Food)) != null) {
+                            GameObject ob = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
+                            ((Utensil)carryingObject.GetComponent(typeof(Utensil))).put(ob);
+                        } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() != null) {
+                            GameObject ob = ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).getOut();
+                            ((Utensil)carryingObject.GetComponent(typeof(Utensil))).put(ob);
+                        }
                     }
-
-                    else //leave
+                    // Player has utensil with food
+                    else
                     {
-                        bool l = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
-                        if (l) carryingObject = null;
+                        if (furnitureGO == null) {
+                            ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
+                            carryingObject = null;
+                        } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() == null) {
+                            GameObject food = ((Utensil)carryingObject.GetComponent(typeof(Utensil))).getOut();
+                            GameObject ob = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
+                            ((Utensil)ob.GetComponent(typeof(Utensil))).put(food);
+                            ((Furniture)go.GetComponent(typeof(Furniture))).leave(ob);
+                        } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() != null) {
+                            Debug.Log("utensili amb menjar(p) i utensili amb menjar(f)");
+                        }
+
+
 
                     }
                 }
@@ -248,7 +275,12 @@ public class playerMovement : MonoBehaviour
             transform.position += (new Vector3(movement.x * actual_speed_x, 0.0f, movement.z * actual_speed_y) * Time.deltaTime);
 
         }
-        if (carryingObject != null) carryingObject.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
+        if (carryingObject != null) {
+            carryingObject.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
+            GameObject go = ((Utensil)carryingObject.GetComponent(typeof(Utensil))).get();
+            //move food inside utensil
+            if (go != null) go.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
+        }
 
 
         //RENDER LIVES

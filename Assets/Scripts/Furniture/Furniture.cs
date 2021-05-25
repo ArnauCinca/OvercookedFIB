@@ -19,8 +19,42 @@ abstract public class Furniture : MonoBehaviour
     {
 
     }
-    public abstract GameObject pick();
-    public abstract bool leave(GameObject o);
+
+    public GameObject getObject() {
+        return o;
+    }
+
+    public virtual GameObject pick()
+    {
+        GameObject ret = o;
+        o = null;
+        return ret;
+    }
+
+    public virtual bool leave(GameObject ob)
+    {
+        //nothing
+        if (o == null)
+        {
+            o = ob;
+            ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
+            return true;
+        }
+        else
+        {
+            //food
+            if (o.GetComponent(typeof(Food)) != null) return false;
+
+            if (o.GetComponent(typeof(Utensil)) != null && ob.GetComponent(typeof(Food)) != null)
+            {
+                //empty utensil true
+                //full utensil false
+                return ((Utensil)o.GetComponent(typeof(Utensil))).put(ob);
+            }
+        }
+
+        return false;
+    }
     public abstract bool action();
 
 }
