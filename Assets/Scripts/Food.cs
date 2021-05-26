@@ -70,6 +70,12 @@ public class Food : Object
             if (((Food)go.GetComponent(typeof(Food))).getType().Equals(((Food)C1.GetComponent(typeof(Food))).getType()))
                 return Instantiate(C1R, transform.position, Quaternion.identity);
         }
+
+        if (C2 != null)
+        {
+            if (((Food)go.GetComponent(typeof(Food))).getType().Equals(((Food)C2.GetComponent(typeof(Food))).getType()))
+                return Instantiate(C2R, transform.position, Quaternion.identity);
+        }
         return null; //TODO: Look possible combinations with prefabs tags
     }
     public bool deliver()

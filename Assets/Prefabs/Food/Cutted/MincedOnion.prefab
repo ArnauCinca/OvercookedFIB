@@ -195,6 +195,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 0}
   Stove_Food: {fileID: 3588834073072841896, guid: 2d565a8d77f85ec448f43c43135f59a1, type: 3}
   Oven_Food: {fileID: 0}
+  type: minced_onion
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &6952327019367825874
 CapsuleCollider:

@@ -99,6 +99,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 4895751890048700055, guid: 4100ba3f1534dff4aa79bb0cefc52884, type: 3}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 1734571978465138979, guid: 9ad3a04d6daac6f429622b5259d0c710, type: 3}
+  type: potato_slices
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &5019554849319624620
 CapsuleCollider:

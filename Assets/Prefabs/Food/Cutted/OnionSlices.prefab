@@ -195,6 +195,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 6280973956695050083, guid: 2d7ca7794d286134486750eabb429401, type: 3}
   Stove_Food: {fileID: 2948047847231719054, guid: 22dfd17ded6d2514199325dd0fc6e9f7, type: 3}
   Oven_Food: {fileID: 0}
+  type: onion_slices
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &8499545398777081651
 CapsuleCollider:

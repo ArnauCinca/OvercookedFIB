@@ -99,6 +99,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 2678962590486468226, guid: c129e9754907aab41b8cf48c4582d10b, type: 3}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 2611025694524914459, guid: 864661500cc70a24e97ccd92930f13d0, type: 3}
+  type: steak
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &5864546778694196305
 CapsuleCollider:

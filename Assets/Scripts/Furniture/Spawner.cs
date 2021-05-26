@@ -14,19 +14,18 @@ public class Spawner : Furniture
     {
         if(o != null)
         {
-            if (!((Utensil)go.GetComponent(typeof(Utensil))).hasFood())
+            if (o.GetComponent(typeof(Food)) != null)
             {
-               ((Utensil)go.GetComponent(typeof(Utensil))).put(o);
-                o = null;
-                StartCoroutine(Spawn(3.0f));
+                if (!((Utensil)go.GetComponent(typeof(Utensil))).hasFood())
+                {
+                    ((Utensil)go.GetComponent(typeof(Utensil))).put(o);
+                    o = null;
+                    StartCoroutine(Spawn(3.0f));
+                }
             }
         }
         return go;
     }
-
-    /*public override bool leave(GameObject o) {
-        return false;
-    }*/
 
     public override bool action()
     {
