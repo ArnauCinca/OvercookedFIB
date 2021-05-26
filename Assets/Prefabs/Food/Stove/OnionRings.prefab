@@ -100,8 +100,8 @@ MonoBehaviour:
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
   type: onion_rings
-  C1: {fileID: 0}
-  C1R: {fileID: 0}
+  C1: {fileID: 8891946900628205881, guid: ab472f1c9eac7af43813c8de2b39e345, type: 3}
+  C1R: {fileID: 943764182664447782, guid: 4698899ae8ae92c4b9b700cf27124aa2, type: 3}
   C2: {fileID: 0}
   C2R: {fileID: 0}
   deliverable: 0
