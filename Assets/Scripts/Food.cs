@@ -64,8 +64,12 @@ public class Food : Object
     }
     public GameObject combine(GameObject go)
     {
-        if (sameFood(go))
-            return C1R;
+        Debug.Log("Combine");
+
+        if (C1 != null) {
+            if (((Food)go.GetComponent(typeof(Food))).getType().Equals(((Food)C1.GetComponent(typeof(Food))).getType()))
+                return Instantiate(C1R, transform.position, Quaternion.identity);
+        }
         return null; //TODO: Look possible combinations with prefabs tags
     }
     public bool deliver()

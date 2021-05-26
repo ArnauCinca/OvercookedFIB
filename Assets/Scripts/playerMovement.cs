@@ -146,43 +146,14 @@ public class playerMovement : MonoBehaviour
                 {
                     delayInteraction = true;
                     StartCoroutine(Delay(delay));
-                    GameObject furnitureGO = ((Furniture)go.GetComponent(typeof(Furniture))).getObject();
                     // Player doesn't carry anything
                     if (carryingObject == null)
                     {
-                        if (furnitureGO != null && furnitureGO.GetComponent(typeof(Utensil)) != null) {
-                            carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
-                        }
-                    // Player has utensil without food
-                    } else if (carryingObject.GetComponent(typeof(Utensil)) != null &&  ((Utensil)carryingObject.GetComponent(typeof(Utensil))).get() == null) {
-                        if (furnitureGO == null) {
-                            bool b = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
-                            if (b) carryingObject = null;
-                        } else if (furnitureGO.GetComponent(typeof(Food)) != null) {
-                            GameObject ob = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
-                            ((Utensil)carryingObject.GetComponent(typeof(Utensil))).put(ob);
-                        } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() != null) {
-                            GameObject ob = ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).getOut();
-                            ((Utensil)carryingObject.GetComponent(typeof(Utensil))).put(ob);
-                        }
+                        carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
                     }
-                    // Player has utensil with food
                     else
                     {
-                        if (furnitureGO == null) {
-                            bool b = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
-                            if (b) carryingObject = null;
-                        } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() == null) {
-                            GameObject food = ((Utensil)carryingObject.GetComponent(typeof(Utensil))).getOut();
-                            GameObject ob = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
-                            ((Utensil)ob.GetComponent(typeof(Utensil))).put(food);
-                            ((Furniture)go.GetComponent(typeof(Furniture))).leave(ob);
-                        } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() != null) {
-                            Debug.Log("utensili amb menjar(p) i utensili amb menjar(f)");
-                        }
-
-
-
+                        carryingObject = ((Furniture)go.GetComponent(typeof(Furniture))).interact(carryingObject);
                     }
                 }
                 else if (Input.GetKey("o"))

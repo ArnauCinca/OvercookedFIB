@@ -7,13 +7,26 @@ public class Spawner : Furniture
 
     public override GameObject pick() {
         GameObject ret = base.pick();
-        StartCoroutine(Spawn(3.0f));
+        if(ret != null) StartCoroutine(Spawn(3.0f));
         return ret;
     }
-
-    public override bool leave(GameObject o) {
-        return false;
+    public override GameObject interact(GameObject go)
+    {
+        if(o != null)
+        {
+            if (!((Utensil)go.GetComponent(typeof(Utensil))).hasFood())
+            {
+               ((Utensil)go.GetComponent(typeof(Utensil))).put(o);
+                o = null;
+                StartCoroutine(Spawn(3.0f));
+            }
+        }
+        return go;
     }
+
+    /*public override bool leave(GameObject o) {
+        return false;
+    }*/
 
     public override bool action()
     {
