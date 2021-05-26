@@ -4,20 +4,6 @@ using UnityEngine;
 
 public class Cutter : Utensil
 {
-    public override void leave(Vector3 pos)
-    {
-        transform.position = pos;
-    }
-
-    public override bool put(GameObject o)
-    {
-        if(go != null) return false;
-        go = o;
-        ((Food)go.GetComponent(typeof(Food))).leave(transform.position + new Vector3(0.0f, 0.05f, 0.0f));
-        return true;
-    }
-
-
     public override bool action()
     {
         if (go == null) return false;
