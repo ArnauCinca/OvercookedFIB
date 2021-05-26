@@ -12,7 +12,7 @@ public class Deliver : MonoBehaviour
     {
         plates = new string[7] {"Tamato", "Chicken", "Bread", "Lettuce", "Meat", "Onion", "Potato"};
         RandomSortPlates();
-        Debug.Log(plates);
+        //foreach (var h in plates) Debug.Log(h);
         index_plates = 0;
     }
 
@@ -32,15 +32,19 @@ public class Deliver : MonoBehaviour
         }
     }
 
-    public void interact(GameObject go) {
+    public bool interact(GameObject go) {
+        bool ret = true;
         bool hasFoodP = ((Utensil)go.GetComponent(typeof(Utensil))).hasFood();
         if (hasFoodP) {
             GameObject foodF = ((Utensil)go.GetComponent(typeof(Utensil))).get();
-            bool sameFood = ((Food)foodF.GetComponent(typeof(Food))).getType().Equals(foodToServe());
-            if (sameFood) index_plates++;
-            //else playerMovement.loseLive();
+            Debug.Log(((Food)foodF.GetComponent(typeof(Food))).getType());
+            bool sameFood = ((Food)foodF.GetComponent(typeof(Food))).getType().ToLower().Equals(foodToServe().ToLower());
+            if (sameFood) nextPlate();
+            else ret = false;
+            Destroy(foodF);
             Destroy(go);
         }
+        return ret;
     }
 
     public string foodToServe() {
@@ -49,7 +53,7 @@ public class Deliver : MonoBehaviour
 
     public void nextPlate() {
         index_plates++;
-        if (index_plates >= plates.Length) SceneManager.LoadScene(1);
+        if (index_plates >= plates.Length) SceneManager.LoadScene(0);
     }
 
 

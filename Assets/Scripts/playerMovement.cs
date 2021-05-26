@@ -164,14 +164,14 @@ public class playerMovement : MonoBehaviour
                 }
             } else if  (go.CompareTag("Deliver"))
             {
-                Debug.Log("AQUI");
                 if (Input.GetKey("p"))
                 {
                     delayInteraction = true;
                     StartCoroutine(Delay(delay));
                      if (carryingObject != null)
                     {
-                        ((Deliver)go.GetComponent(typeof(Deliver))).interact(carryingObject);
+                        bool correct = ((Deliver)go.GetComponent(typeof(Deliver))).interact(carryingObject);
+                        if (!correct) loseLive();
                     }
                 }
             }
