@@ -196,8 +196,8 @@ MonoBehaviour:
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
   type: lettuce_leaves
-  C1: {fileID: 0}
-  C1R: {fileID: 0}
+  C1: {fileID: 7573863407561210146, guid: cfcdbc6d49212c34bb5309f2842bb824, type: 3}
+  C1R: {fileID: 9005356348389872981, guid: 9cce1677c5ce2a547b56a0f0961e3a0e, type: 3}
   C2: {fileID: 0}
   C2R: {fileID: 0}
   deliverable: 0
