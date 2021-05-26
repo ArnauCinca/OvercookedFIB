@@ -156,8 +156,8 @@ public class playerMovement : MonoBehaviour
                     // Player has utensil without food
                     } else if (carryingObject.GetComponent(typeof(Utensil)) != null &&  ((Utensil)carryingObject.GetComponent(typeof(Utensil))).get() == null) {
                         if (furnitureGO == null) {
-                            ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
-                            carryingObject = null;
+                            bool b = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
+                            if (b) carryingObject = null;
                         } else if (furnitureGO.GetComponent(typeof(Food)) != null) {
                             GameObject ob = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
                             ((Utensil)carryingObject.GetComponent(typeof(Utensil))).put(ob);
@@ -170,8 +170,8 @@ public class playerMovement : MonoBehaviour
                     else
                     {
                         if (furnitureGO == null) {
-                            ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
-                            carryingObject = null;
+                            bool b = ((Furniture)go.GetComponent(typeof(Furniture))).leave(carryingObject);
+                            if (b) carryingObject = null;
                         } else if (furnitureGO.GetComponent(typeof(Utensil)) != null && ((Utensil)furnitureGO.GetComponent(typeof(Utensil))).get() == null) {
                             GameObject food = ((Utensil)carryingObject.GetComponent(typeof(Utensil))).getOut();
                             GameObject ob = ((Furniture)go.GetComponent(typeof(Furniture))).pick();
