@@ -26,7 +26,7 @@ abstract public class Furniture : MonoBehaviour
 
     public virtual GameObject pick()
     {
-        if(o.GetComponent(typeof(Utensil)) != null) {
+        if(o != null && o.GetComponent(typeof(Utensil)) != null) {
             GameObject ret = o;
             o = null;
             return ret;
