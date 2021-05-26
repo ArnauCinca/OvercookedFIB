@@ -195,8 +195,8 @@ MonoBehaviour:
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
   type: cooked_steak
-  C1: {fileID: 0}
-  C1R: {fileID: 0}
+  C1: {fileID: 1734571978465138979, guid: 9ad3a04d6daac6f429622b5259d0c710, type: 3}
+  C1R: {fileID: 8729853339984520896, guid: 46b94a7ff136cf742ba03eee1ce98a01, type: 3}
   C2: {fileID: 0}
   C2R: {fileID: 0}
   deliverable: 0
