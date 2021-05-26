@@ -162,6 +162,18 @@ public class playerMovement : MonoBehaviour
                     StartCoroutine(Delay(delay));
                     ((Furniture)go.GetComponent(typeof(Furniture))).action();
                 }
+            } else if  (go.CompareTag("Deliver"))
+            {
+                Debug.Log("AQUI");
+                if (Input.GetKey("p"))
+                {
+                    delayInteraction = true;
+                    StartCoroutine(Delay(delay));
+                     if (carryingObject != null)
+                    {
+                        ((Deliver)go.GetComponent(typeof(Deliver))).interact(carryingObject);
+                    }
+                }
             }
         }
     }

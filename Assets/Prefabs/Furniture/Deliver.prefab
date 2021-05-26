@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5977308598913718494}
   - component: {fileID: 8933666752072748632}
   - component: {fileID: 1982358204374843659}
+  - component: {fileID: -5707158162834708572}
   m_Layer: 0
   m_Name: Deliver
   m_TagString: Furniture
@@ -109,3 +110,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 0.95}
   m_Center: {x: 0.5, y: 0, z: 0}
+--- !u!114 &-5707158162834708572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2785785485450732976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af346057ed8aeb0429dc78df2030e5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
