@@ -276,10 +276,7 @@ public class playerMovement : MonoBehaviour
 
         }
         if (carryingObject != null) {
-            carryingObject.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
-            GameObject go = ((Utensil)carryingObject.GetComponent(typeof(Utensil))).get();
-            //move food inside utensil
-            if (go != null) go.transform.position = new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z);
+            ((Object)carryingObject.GetComponent(typeof(Object))).move(new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z));
         }
 
 

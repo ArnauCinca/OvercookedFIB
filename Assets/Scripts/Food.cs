@@ -19,7 +19,10 @@ public class Food : Object
     {
         transform.position = pos;
     }
-
+    public override void move(Vector3 pos)
+    {
+        transform.position = pos;
+    }
 
     public GameObject cut()
     {
