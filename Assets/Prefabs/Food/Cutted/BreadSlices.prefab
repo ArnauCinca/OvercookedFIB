@@ -197,9 +197,9 @@ MonoBehaviour:
   Oven_Food: {fileID: 0}
   type: bread_slices
   C1: {fileID: 3311695090627731320, guid: bb313a9ba8f1f2542bf82b065da39e1a, type: 3}
-  C1R: {fileID: 7370503402153027103, guid: 1fc7b0fdcd84b814083ed45935360780, type: 3}
+  C1R: {fileID: 5295910086748501105, guid: b1dfce69cb314ba42ad4995bba83e707, type: 3}
   C2: {fileID: 822859148094750303, guid: 0d85d09346c3e624aaf2762ff4169748, type: 3}
-  C2R: {fileID: 1190529828135561940, guid: bfb9b04e940b2374ba11f5b126e4db05, type: 3}
+  C2R: {fileID: 8735566720456904588, guid: 3c808960e6a24944b8cbf1648200f748, type: 3}
   deliverable: 0
 --- !u!136 &6281938325645563564
 CapsuleCollider:

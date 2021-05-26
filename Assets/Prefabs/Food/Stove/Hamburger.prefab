@@ -100,8 +100,8 @@ MonoBehaviour:
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
   type: hamburger
-  C1: {fileID: 4056109322662713923, guid: bc3ed9d5e8093c641b160e7c3fcb2435, type: 3}
-  C1R: {fileID: 7370503402153027103, guid: 1fc7b0fdcd84b814083ed45935360780, type: 3}
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
   C2: {fileID: 0}
   C2R: {fileID: 0}
   deliverable: 0
