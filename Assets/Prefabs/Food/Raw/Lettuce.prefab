@@ -194,6 +194,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 9035979020322229601, guid: 2c8739d024f7490429759788b69a92d0, type: 3}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
+  type: lettuce
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!135 &3740361249393646490
 SphereCollider:

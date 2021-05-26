@@ -194,6 +194,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 6153224488295437700, guid: 163a799e111481a4591eeeda695d7ec3, type: 3}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
+  type: chicken
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!135 &4385101807220776925
 SphereCollider:

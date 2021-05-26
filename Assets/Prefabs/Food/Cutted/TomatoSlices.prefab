@@ -99,6 +99,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 0}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
+  type: tomato_slices
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &467275724507706829
 CapsuleCollider:

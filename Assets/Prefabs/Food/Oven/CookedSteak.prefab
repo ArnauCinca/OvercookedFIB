@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 3127618495693971889}
   - component: {fileID: 5430187104168654836}
   m_Layer: 0
-  m_Name: Cooked_Steak
+  m_Name: CookedSteak
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,6 +194,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 0}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
+  type: cooked_steak
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &5430187104168654836
 CapsuleCollider:

@@ -195,6 +195,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 0}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
+  type: lettuce_leaves
+  C1: {fileID: 0}
+  C1R: {fileID: 0}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!136 &1297568189688988046
 CapsuleCollider:
