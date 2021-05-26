@@ -99,6 +99,11 @@ MonoBehaviour:
   Cutted_Food: {fileID: 7573863407561210146, guid: cfcdbc6d49212c34bb5309f2842bb824, type: 3}
   Stove_Food: {fileID: 0}
   Oven_Food: {fileID: 0}
+  type: tomato
+  C1: {fileID: 8465710356643949586, guid: 6e12bb970364c4849bf28cef0f3029a0, type: 3}
+  C1R: {fileID: 1994498693025479984, guid: 7b6c9deb818f83e4baa5efc685faca11, type: 3}
+  C2: {fileID: 0}
+  C2R: {fileID: 0}
   deliverable: 0
 --- !u!135 &5746566819815990381
 SphereCollider:
