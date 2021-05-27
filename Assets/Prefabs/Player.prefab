@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099684906895631214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   pm: {fileID: 0}
+  ui: {fileID: 0}
   delay: 0.2
   rotation_speed: 5
   collision_speed: 1
