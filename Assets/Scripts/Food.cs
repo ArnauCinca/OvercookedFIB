@@ -9,6 +9,7 @@ public class Food : Object
     public GameObject Cutted_Food;
     public GameObject Stove_Food;
     public GameObject Oven_Food;
+    public GameObject Burned_Food;
     public string type;
 
     public GameObject C1;
@@ -50,6 +51,7 @@ public class Food : Object
         if (Cutted_Food == null) return null;
         return Instantiate(Cutted_Food, transform.position, Quaternion.identity);
     }
+
     public GameObject cook_oven()
     {
         if (Oven_Food == null) return null;
@@ -57,11 +59,17 @@ public class Food : Object
     }
 
     public GameObject cook_stove()
-
     {
         if (Stove_Food == null) return null;
         return Instantiate(Stove_Food, transform.position, Quaternion.identity);
     }
+
+    public GameObject burn_food()
+    {
+        if (Burned_Food == null) return null;
+        return Instantiate(Burned_Food, transform.position, Quaternion.identity); 
+    }
+
     public GameObject combine(GameObject go)
     {
         Debug.Log("Combine");

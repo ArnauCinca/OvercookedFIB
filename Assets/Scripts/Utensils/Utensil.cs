@@ -5,6 +5,13 @@ using UnityEngine;
 abstract public class Utensil : Object
 {
 
+    public bool isCooking;
+    public bool isCooked;
+    public bool isBurned;
+    public float cookingStart;
+    public float burnTime;
+    public float cookingTime;
+
     protected GameObject go;
 
     public override GameObject pick()
@@ -45,5 +52,58 @@ abstract public class Utensil : Object
     }
 
     public abstract bool action();
+
+    // Start is called before the first frame update
+    public override void Start()
+    {
+        isCooking = false;
+        cookingTime = 3f;
+        burnTime = 10f;
+    }
+
+    // Update is called once per frame
+    public override void Update()
+    {
+        if (isCooking) {
+            if (!isCooked && !isBurned && Mathf.Abs(playerMovement.timeRemaining - cookingStart) > cookingTime) {
+                isCooked = cookFood();
+                Debug.Log(isCooked);
+            }
+            if (isCooked && !isBurned && Mathf.Abs(playerMovement.timeRemaining - cookingStart) > burnTime) {
+                Debug.Log("sdfdssd");
+                isBurned = true;
+            }
+            if (isBurned) {
+                //Fer que surti foc
+            }
+        }
+    }
+
+    public void initCooking()
+    {
+        isCooking = true;
+        cookingStart = playerMovement.timeRemaining;
+        isCooked = false; //Aqui s'ha de mirar si el mejar esta cuinat
+        isBurned = false; //Aqui s'ha de mirar si el menjar esta cremat
+    }
+
+    public void stopCooking()
+    {
+        isCooking = false;
+    }
+
+    public virtual bool cookFood() {
+        return true;
+    }
+
+    //AIXO S'HA D'ARREGLAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public bool burnedFood() {
+        GameObject obj = ((Food)go.GetComponent(typeof(Food))).burn_food();
+        if (obj == null) return false;
+        Destroy(go);
+        go = null;
+        go = obj;
+        return true;
+    }
 
 }
