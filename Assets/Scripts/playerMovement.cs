@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
+    //Global vars
+    public static bool movement;
+    public static float timeRemaining;
+    public static float delayStart;
+
     public float speed = 100.0f;
     public GameObject pm;
     public GameObject ui;
+    
 
     bool pause = false;
     private GameObject carryingObject = null;
     private bool delayInteraction = false;
-    public float delay = 0.2f;
+    public float delay = 0.5f;
+    public float delayTime = 5f;
     public float rotation_speed = 5.0f;
 
     int lives = 3;
@@ -26,7 +33,8 @@ public class playerMovement : MonoBehaviour
         actual_speed_x = speed;
         actual_speed_y = speed;
         transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
-
+        timeRemaining = 120f;
+        movement = true;
 
     }
 
@@ -139,7 +147,7 @@ public class playerMovement : MonoBehaviour
 
     void interaction(GameObject go)
     {
-        if (!delayInteraction && !pause) {
+        if (!delayInteraction && !pause && movement) {
             if (go.CompareTag("Furniture"))
             {
                 if (Input.GetKey("p"))
@@ -206,8 +214,20 @@ public class playerMovement : MonoBehaviour
         ui.gameObject.SetActive(!pause);
     }
 
+    public static void initDelay() {
+        playerMovement.movement = false;
+        playerMovement.delayStart = playerMovement.timeRemaining;
+    }
+
     void Update()
     {
+        if (!playerMovement.movement) {
+            if (Mathf.Abs(playerMovement.timeRemaining - playerMovement.delayStart) > delayTime) {
+                playerMovement.movement = true;
+            } 
+        }
+        //Debug.Log( Mathf.Abs(timeRemaining - delayStart));
+
         if (Input.GetKeyDown("escape"))
         {
             if (pause)
@@ -219,30 +239,37 @@ public class playerMovement : MonoBehaviour
                 Pause();
             }
         }
+
+        if (!pause) {
+            if (timeRemaining > 0) timeRemaining -= Time.deltaTime;
+            else SceneManager.LoadScene(0);
+        }
         
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
         bool move = false;
-        if (Input.GetKey("w")) {
-            movement.z += 1.0f;
-            move = true;
-        }
-        if (Input.GetKey("s"))
-        {
-            movement.z -= 1.0f;
-            move = true;
+        //Debug.Log(playerMovement.movement);
+        if (playerMovement.movement) {
+            if (Input.GetKey("w")) {
+                movement.z += 1.0f;
+                move = true;
+            }
+            if (Input.GetKey("s"))
+            {
+                movement.z -= 1.0f;
+                move = true;
 
-        }
-        if (Input.GetKey("d"))
-        {
-            movement.x += 1.0f;
-            move = true;
+            }
+            if (Input.GetKey("d"))
+            {
+                movement.x += 1.0f;
+                move = true;
 
-        }
-        if (Input.GetKey("a"))
-        {
-            movement.x -= 1.0f;
-            move = true;
-
+            }
+            if (Input.GetKey("a"))
+            {
+                movement.x -= 1.0f;
+                move = true;
+            }
         }
         if (move)
         {

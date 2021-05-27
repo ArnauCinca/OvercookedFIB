@@ -6,6 +6,7 @@ public class Cutter : Utensil
 {
     public override bool action()
     {
+        playerMovement.initDelay();
         if (go == null) return false;
         GameObject obj = ((Food)go.GetComponent(typeof(Food))).cut();
         if (obj == null) return false;

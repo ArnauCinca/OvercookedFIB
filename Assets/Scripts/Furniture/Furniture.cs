@@ -127,4 +127,5 @@ abstract public class Furniture : MonoBehaviour
     }*/
     public abstract bool action();
 
+    
 }
