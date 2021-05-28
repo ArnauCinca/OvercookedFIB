@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 1191461109905041169}
   - component: {fileID: 1286194228852826798}
   - component: {fileID: 1306262720403662177}
+  - component: {fileID: 8353159171256411211}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -249,6 +250,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0.5}
+--- !u!81 &8353159171256411211
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191461109905041168}
+  m_Enabled: 1
 --- !u!1 &8041174976101834374
 GameObject:
   m_ObjectHideFlags: 0
