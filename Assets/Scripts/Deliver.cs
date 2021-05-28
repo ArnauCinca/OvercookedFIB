@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Deliver : MonoBehaviour
 {
+    public TMPro.TextMeshProUGUI uiText;
     protected string[] plates;
     protected int index_plates;
     // Start is called before the first frame update
     void Start()
     {
-        plates = new string[7] {"Tamato", "Chicken", "Bread", "Lettuce", "Meat", "Onion", "Potato"};
+        plates = new string[6] { "bread", "chicken", "onion", "lettuce", "meat", "potato"};
         RandomSortPlates();
         //foreach (var h in plates) Debug.Log(h);
         index_plates = 0;
@@ -19,7 +20,7 @@ public class Deliver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        uiText.text = foodToServe();
     }
 
     public void RandomSortPlates() {
@@ -55,6 +56,7 @@ public class Deliver : MonoBehaviour
         index_plates++;
         if (index_plates >= plates.Length) SceneManager.LoadScene(0);
     }
+
 
 
 }
