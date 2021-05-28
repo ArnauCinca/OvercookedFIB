@@ -212,6 +212,8 @@ MonoBehaviour:
   speed: 10
   pm: {fileID: 0}
   ui: {fileID: 0}
+  deliver: {fileID: 0}
+  plate: {fileID: 2508940329661300774, guid: 96677485817e184498a2246ce54d013e, type: 3}
   delay: 0.2
   delayTime: 1
   rotation_speed: 5
@@ -307,7 +309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 994d3eab956b23f4a9619ddcc8002047, type: 2}
+  - {fileID: 2100000, guid: d9e3f114dd1410947ae45a89f9ccb0e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -402,7 +404,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 994d3eab956b23f4a9619ddcc8002047, type: 2}
+  - {fileID: 2100000, guid: d9e3f114dd1410947ae45a89f9ccb0e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

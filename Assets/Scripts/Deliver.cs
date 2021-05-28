@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Deliver : MonoBehaviour
 {
     public UnityEngine.UI.Image img;
-    public string[] plates;
+    public GameObject[] plates;
     public Sprite[] plate_images;
     protected int index_plates;
 
@@ -29,7 +29,7 @@ public class Deliver : MonoBehaviour
         for (int i = plates.Length - 1; i > 0; i--)
         {
             int randomIndex = Random.Range(0, i+1);
-            string temp = plates[i];
+            GameObject temp = plates[i];
             plates[i] = plates[randomIndex];
             plates[randomIndex] = temp;
             Sprite temp2 = plate_images[i];
@@ -44,7 +44,7 @@ public class Deliver : MonoBehaviour
         if (hasFoodP) {
             GameObject foodF = ((Utensil)go.GetComponent(typeof(Utensil))).get();
             Debug.Log(((Food)foodF.GetComponent(typeof(Food))).getType());
-            bool sameFood = ((Food)foodF.GetComponent(typeof(Food))).getType().ToLower().Equals(foodToServe().ToLower());
+            bool sameFood = ((Food)foodF.GetComponent(typeof(Food))).getType().ToLower().Equals(((Food)foodF.GetComponent(typeof(Food))).getType().ToLower());
             if (sameFood) nextPlate();
             else ret = false;
             Destroy(foodF);
@@ -53,7 +53,7 @@ public class Deliver : MonoBehaviour
         return ret;
     }
 
-    public string foodToServe() {
+    public GameObject foodToServe() {
         return plates[index_plates];
     }
 

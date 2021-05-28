@@ -13,7 +13,12 @@ public class playerMovement : MonoBehaviour
     public float speed = 100.0f;
     public GameObject pm;
     public GameObject ui;
-    
+
+
+
+    public GameObject deliver;
+    public GameObject plate;
+
 
     bool pause = false;
     private GameObject carryingObject = null;
@@ -295,6 +300,21 @@ public class playerMovement : MonoBehaviour
         else ui.transform.GetChild(1).gameObject.SetActive(false);
         if (lives >= 3) ui.transform.GetChild(2).gameObject.SetActive(true);
         else ui.transform.GetChild(2).gameObject.SetActive(false);
+
+
+
+        //God Mode
+        if (Input.GetKeyDown("m"))
+        {
+            if(carryingObject != null)
+            {
+                Destroy(carryingObject);
+                carryingObject = null;
+            }
+            GameObject food = Instantiate(((Deliver)deliver.GetComponent(typeof(Deliver))).foodToServe(), new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+            carryingObject = Instantiate(plate, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+            ((Utensil)carryingObject.GetComponent(typeof(Utensil))).put(food);
+        }
     }
 
     protected IEnumerator Delay(float delay)
