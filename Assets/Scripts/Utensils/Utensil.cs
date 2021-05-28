@@ -7,7 +7,7 @@ abstract public class Utensil : Object
     Coroutine co = null;
 
     protected GameObject go;
-
+    public GameObject godMode;
 
     public override GameObject pick()
     {
@@ -110,17 +110,25 @@ abstract public class Utensil : Object
             GameObject obj = cookFood();
             if (obj != null)
             {
-                Destroy(go);
-                go = null;
-                go = obj;
-
-                co = null;
-                //burn  //TODO: FIRE
-                b = ((Food)go.GetComponent(typeof(Food))).startCooking();
-                if (b)
+                if (((Food)obj.GetComponent(typeof(Food))).getType().Equals("burned_food") && ((GodMode)godMode.GetComponent(typeof(GodMode))).burnActive())
                 {
-                    float t = ((Food)go.GetComponent(typeof(Food))).getCookingTime();
-                    co = StartCoroutine(Cook(t));
+                    Destroy(obj);
+                }
+                else
+                {
+                    Destroy(go);
+                    go = null;
+                    go = obj;
+
+                    co = null;
+                    //burn  //TODO: FIRE
+                    b = ((Food)go.GetComponent(typeof(Food))).startCooking();
+                    if (b)
+                    {
+                        float t = ((Food)go.GetComponent(typeof(Food))).getCookingTime();
+                        co = StartCoroutine(Cook(t));
+                    }
+
                 }
 
             }
