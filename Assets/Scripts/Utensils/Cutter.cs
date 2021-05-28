@@ -10,7 +10,7 @@ public class Cutter : Utensil
         if (go == null) return false;
         GameObject obj = ((Food)go.GetComponent(typeof(Food))).cut();
         if (obj == null) return false;
-
+        source.Play();
         Destroy(go);
         go = null;
         go = obj;
