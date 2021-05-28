@@ -32,6 +32,10 @@ public class Food : Object
     public void Update()
     {
         if (is_cooking) cookingTime -= Time.deltaTime;
+        if (Input.GetKeyDown("b"))
+        {
+            cookingTime = -1;
+        }
     }
 
     public bool startCooking() {

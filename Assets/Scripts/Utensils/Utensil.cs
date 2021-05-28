@@ -103,6 +103,17 @@ abstract public class Utensil : Object
         {
             burnActive = !burnActive;
         }
+        if (Input.GetKeyDown("b"))
+        {
+            if(co != null)
+            {
+                StopCoroutine(co);
+                co = null;
+            }
+
+            co = StartCoroutine(Cook(0.1f));
+
+        }
     }
 
     public virtual GameObject cookFood() {
@@ -114,37 +125,41 @@ abstract public class Utensil : Object
     protected IEnumerator Cook(float delay)
     {
         yield return new WaitForSeconds(delay);
-        bool b = ((Food)go.GetComponent(typeof(Food))).stopCooking();
-        if (b && ((Food)go.GetComponent(typeof(Food))).getCookingTime() <= 0.0)
+        if(go != null)
         {
-
-            GameObject obj = cookFood();
-            if (obj != null)
+            ((Food)go.GetComponent(typeof(Food))).stopCooking();
+            if (((Food)go.GetComponent(typeof(Food))).getCookingTime() <= 0.0)
             {
-                if (((Food)obj.GetComponent(typeof(Food))).getType().Equals("burned_food") && !burnActive)
-                {
-                    Destroy(obj);
-                }
-                else
-                {
-                    Destroy(go);
-                    go = null;
-                    go = obj;
 
-                    co = null;
-                    //burn  //TODO: FIRE
-                    b = ((Food)go.GetComponent(typeof(Food))).startCooking();
-                    if (b)
+                GameObject obj = cookFood();
+                if (obj != null)
+                {
+                    if (((Food)obj.GetComponent(typeof(Food))).getType().Equals("burned_food") && !burnActive)
                     {
-                        float t = ((Food)go.GetComponent(typeof(Food))).getCookingTime();
-                        co = StartCoroutine(Cook(t));
+                        Destroy(obj);
+                    }
+                    else
+                    {
+                        Destroy(go);
+                        go = null;
+                        go = obj;
+
+                        co = null;
+                        //burn  //TODO: FIRE
+                        bool b = ((Food)go.GetComponent(typeof(Food))).startCooking();
+                        if (b)
+                        {
+                            float t = ((Food)go.GetComponent(typeof(Food))).getCookingTime();
+                            co = StartCoroutine(Cook(t));
+                        }
+
                     }
 
                 }
 
             }
-
         }
+        
 
     }
 
