@@ -3904,6 +3904,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1328220746}
+    - target: {fileID: 1191461109905041169, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
+      propertyPath: deliver
+      value: 
+      objectReference: {fileID: 2002241733}
     - target: {fileID: 3161565784426770398, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4951,6 +4955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
+--- !u!1 &2002241733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5364726059413168716, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+  m_PrefabInstance: {fileID: 7843666152497533072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2019916930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5717,16 +5726,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[0]
-      value: ' dish_chicken_hamburger'
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 1190529828135561940, guid: bfb9b04e940b2374ba11f5b126e4db05, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[1]
-      value: ' dish_hamburger'
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 7370503402153027103, guid: 1fc7b0fdcd84b814083ed45935360780, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[2]
-      value: dish_chicken_w_onion_rings
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 943764182664447782, guid: 4698899ae8ae92c4b9b700cf27124aa2, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plate_images.Array.size
       value: 3
