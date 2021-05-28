@@ -94,18 +94,22 @@ abstract public class Furniture : MonoBehaviour
         else //no food no utensil -> leave
         {
 
-            o = go;
-            ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 2.0f, 0.0f));
-            Debug.Log("A");
-            ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
-
-            return null;
+            return leave(go);
         }
 
         return go;
 
     }
 
+    public virtual GameObject leave(GameObject go)
+    {
+        o = go;
+        ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 2.0f, 0.0f));
+        Debug.Log("A");
+        ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+
+        return null;
+    }
  
     public abstract bool action();
 

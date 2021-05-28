@@ -8,7 +8,7 @@ public class Oven : Furniture
     void Start()
     {
         if (spawnObject != null)
-            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -25,4 +25,15 @@ public class Oven : Furniture
         }
         return true;
     }
+
+    public override GameObject leave(GameObject go)
+    {
+        o = go;
+        ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
+        Debug.Log("A");
+        ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+
+        return null;
+    }
+
 }
