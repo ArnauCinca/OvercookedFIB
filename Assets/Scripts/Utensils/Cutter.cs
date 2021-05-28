@@ -16,4 +16,9 @@ public class Cutter : Utensil
         go = obj;
         return true;
     }
+    public override void action_aux(bool isWorking)
+    {
+        
+    }
+
 }

@@ -200,6 +200,7 @@ MonoBehaviour:
   C1R: {fileID: 0}
   C2: {fileID: 0}
   C2R: {fileID: 0}
+  cookingTime: 5
   deliverable: 0
 --- !u!136 &6952327019367825874
 CapsuleCollider:

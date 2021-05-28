@@ -226,7 +226,6 @@ public class playerMovement : MonoBehaviour
                 playerMovement.movement = true;
             } 
         }
-        //Debug.Log( Mathf.Abs(timeRemaining - delayStart));
 
         if (Input.GetKeyDown("escape"))
         {
@@ -247,7 +246,6 @@ public class playerMovement : MonoBehaviour
         
         Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
         bool move = false;
-        //Debug.Log(playerMovement.movement);
         if (playerMovement.movement) {
             if (Input.GetKey("w")) {
                 movement.z += 1.0f;

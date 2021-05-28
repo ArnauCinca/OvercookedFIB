@@ -6,6 +6,7 @@ abstract public class Furniture : MonoBehaviour
 {
     public GameObject spawnObject;
     protected GameObject o;
+    public bool isWorking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ abstract public class Furniture : MonoBehaviour
     public virtual GameObject pick()
     {
         if(o != null && o.GetComponent(typeof(Utensil)) != null) {
-            ((Utensil)o.GetComponent(typeof(Utensil))).stopCooking();
+            ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(false);
             GameObject ret = o;
             o = null;
             return ret;
@@ -64,13 +65,23 @@ abstract public class Furniture : MonoBehaviour
                     {
                         GameObject foodP = ((Utensil)go.GetComponent(typeof(Utensil))).get();
                         bool b = ((Utensil)o.GetComponent(typeof(Utensil))).put(foodP);
+                        if (b)
+                        {
+                            Debug.Log("A");
+
+                            ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+
+                        }
                     }
                 }
                 else
                 {
                     if (hasFoodF)                                                   //utensil - uteensil & food
                     {
+                        ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(false);
                         GameObject foodF = ((Utensil)o.GetComponent(typeof(Utensil))).get();
+                        
+
                         ((Utensil)go.GetComponent(typeof(Utensil))).put(foodF);
                     }
                     else;                                                           //utensil - utensil
@@ -93,8 +104,12 @@ abstract public class Furniture : MonoBehaviour
         }
         else //no food no utensil -> leave
         {
+
             o = go;
             ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
+            Debug.Log("A");
+            ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+
             return null;
         }
 
@@ -102,30 +117,7 @@ abstract public class Furniture : MonoBehaviour
 
     }
 
-    /*public virtual bool leave(GameObject ob)
-    {
-        //nothing
-        if (o == null)
-        {
-            o = ob;
-            ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
-            return true;
-        }
-        else
-        {
-            //food
-            if (o.GetComponent(typeof(Food)) != null) return false;
-
-            if (o.GetComponent(typeof(Utensil)) != null && ob.GetComponent(typeof(Food)) != null)
-            {
-                //empty utensil true
-                //full utensil false
-                return ((Utensil)o.GetComponent(typeof(Utensil))).put(ob);
-            }
-        }
-
-        return false;
-    }*/
+ 
     public abstract bool action();
 
     

@@ -97,13 +97,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cutted_Food: {fileID: 0}
-  Stove_Food: {fileID: 0}
-  Oven_Food: {fileID: 0}
+  Stove_Food: {fileID: 2388891884115707868, guid: 33f148686742512489968afb7a433ac5, type: 3}
+  Oven_Food: {fileID: 2388891884115707868, guid: 33f148686742512489968afb7a433ac5, type: 3}
   type: fried_onion
   C1: {fileID: 0}
   C1R: {fileID: 0}
   C2: {fileID: 0}
   C2R: {fileID: 0}
+  cookingTime: 10
   deliverable: 0
 --- !u!136 &477163362755539481
 CapsuleCollider:

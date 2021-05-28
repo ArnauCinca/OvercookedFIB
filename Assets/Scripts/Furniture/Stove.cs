@@ -6,7 +6,12 @@ public class Stove : Furniture
 {
     public override bool action()
     {
-        if (o == null || o.GetComponent(typeof(Pan)) == null) return false; //for now... (if there are a utensil attach to it)
-        return ((Utensil)o.GetComponent(typeof(Pan))).action();
+        isWorking = !isWorking;
+        if (o != null && o.GetComponent(typeof(Pan)) != null)
+        {
+            ((Utensil)o.GetComponent(typeof(Pan))).action_aux(isWorking);
+        }
+        return true;
     }
+
 }

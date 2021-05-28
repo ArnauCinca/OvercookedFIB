@@ -4,18 +4,14 @@ using UnityEngine;
 
 abstract public class Utensil : Object
 {
-
-    public bool isCooking;
-    public bool isCooked;
-    public bool isBurned;
-    public float cookingStart;
-    public float burnTime;
-    public float cookingTime;
+    Coroutine co = null;
 
     protected GameObject go;
 
+
     public override GameObject pick()
     {
+        //StopCooking
         return gameObject;
     }
 
@@ -27,6 +23,8 @@ abstract public class Utensil : Object
 
     public override void leave(Vector3 pos)
     {
+        //StartCooking?
+
         transform.position = pos;
         if (go != null) ((Food)go.GetComponent(typeof(Food))).leave(pos + new Vector3(0.0f, 0.05f, 0.0f));
     }
@@ -34,6 +32,8 @@ abstract public class Utensil : Object
     public GameObject get()
     {
         if (go == null) return null;
+        //StopCooking
+
         GameObject ret = go;
         go = null;
         return ret;
@@ -43,7 +43,11 @@ abstract public class Utensil : Object
     {
         if (go != null) return false;
         go = o;
+        
         ((Food)go.GetComponent(typeof(Food))).leave(transform.position + new Vector3(0.0f, 0.05f, 0.0f));
+        //StartCooking?
+
+
         return true;
     }
     public bool hasFood()
@@ -53,57 +57,76 @@ abstract public class Utensil : Object
 
     public abstract bool action();
 
-    // Start is called before the first frame update
-    public override void Start()
+    public virtual void action_aux(bool isWorking)
     {
-        isCooking = false;
-        cookingTime = 3f;
-        burnTime = 10f;
-    }
+        if (go == null || go.GetComponent(typeof(Food)) == null) return;
 
-    // Update is called once per frame
-    public override void Update()
-    {
-        if (isCooking) {
-            if (!isCooked && !isBurned && Mathf.Abs(playerMovement.timeRemaining - cookingStart) > cookingTime) {
-                isCooked = cookFood();
-                Debug.Log(isCooked);
+        if (isWorking)
+        {
+            bool b = ((Food)go.GetComponent(typeof(Food))).startCooking();
+            if (b)
+            {
+                float t = ((Food)go.GetComponent(typeof(Food))).getCookingTime();
+                co = StartCoroutine(Cook(t));
             }
-            if (isCooked && !isBurned && Mathf.Abs(playerMovement.timeRemaining - cookingStart) > burnTime) {
-                Debug.Log("sdfdssd");
-                isBurned = true;
-            }
-            if (isBurned) {
-                //Fer que surti foc
+
+        }
+        else
+        {
+            bool b = ((Food)go.GetComponent(typeof(Food))).stopCooking();
+            if (b && co != null)
+            {
+                StopCoroutine(co);
+                co = null;
             }
         }
     }
 
-    public void initCooking()
+    // Start is called before the first frame update
+    public void Start()
     {
-        isCooking = true;
-        cookingStart = playerMovement.timeRemaining;
-        isCooked = false; //Aqui s'ha de mirar si el mejar esta cuinat
-        isBurned = false; //Aqui s'ha de mirar si el menjar esta cremat
+
     }
 
-    public void stopCooking()
+    // Update is called once per frame
+    public void Update()
     {
-        isCooking = false;
+
     }
 
-    public virtual bool cookFood() {
-        return true;
+    public virtual GameObject cookFood() {
+        return null;
     }
 
-    //AIXO S'HA D'ARREGLAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public bool burnedFood() {
-        GameObject obj = ((Food)go.GetComponent(typeof(Food))).burn_food();
-        if (obj == null) return false;
-        Destroy(go);
-        go = null;
-        go = obj;
-        return true;
+
+
+    protected IEnumerator Cook(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        bool b = ((Food)go.GetComponent(typeof(Food))).stopCooking();
+        if (b && ((Food)go.GetComponent(typeof(Food))).getCookingTime() <= 0.0)
+        {
+
+            GameObject obj = cookFood();
+            if (obj != null)
+            {
+                Destroy(go);
+                go = null;
+                go = obj;
+
+                co = null;
+                //burn  //TODO: FIRE
+                b = ((Food)go.GetComponent(typeof(Food))).startCooking();
+                if (b)
+                {
+                    float t = ((Food)go.GetComponent(typeof(Food))).getCookingTime();
+                    co = StartCoroutine(Cook(t));
+                }
+
+            }
+
+        }
+
     }
 
 }

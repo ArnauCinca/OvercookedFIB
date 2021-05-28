@@ -192,13 +192,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cutted_Food: {fileID: 0}
-  Stove_Food: {fileID: 0}
-  Oven_Food: {fileID: 0}
+  Stove_Food: {fileID: 2388891884115707868, guid: 33f148686742512489968afb7a433ac5, type: 3}
+  Oven_Food: {fileID: 2388891884115707868, guid: 33f148686742512489968afb7a433ac5, type: 3}
+  Burned_Food: {fileID: 0}
   type: cooked_chicken
   C1: {fileID: 2948047847231719054, guid: 22dfd17ded6d2514199325dd0fc6e9f7, type: 3}
   C1R: {fileID: 943764182664447782, guid: 4698899ae8ae92c4b9b700cf27124aa2, type: 3}
   C2: {fileID: 0}
   C2R: {fileID: 0}
+  cookingTime: 10
   deliverable: 0
 --- !u!136 &1441528977409080790
 CapsuleCollider:

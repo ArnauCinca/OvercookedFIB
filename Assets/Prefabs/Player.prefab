@@ -213,6 +213,7 @@ MonoBehaviour:
   pm: {fileID: 0}
   ui: {fileID: 0}
   delay: 0.2
+  delayTime: 1
   rotation_speed: 5
   collision_speed: 1
   actual_speed_x: 0

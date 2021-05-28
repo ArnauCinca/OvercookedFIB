@@ -104,6 +104,7 @@ MonoBehaviour:
   C1R: {fileID: 5295910086748501105, guid: b1dfce69cb314ba42ad4995bba83e707, type: 3}
   C2: {fileID: 822859148094750303, guid: 0d85d09346c3e624aaf2762ff4169748, type: 3}
   C2R: {fileID: 8735566720456904588, guid: 3c808960e6a24944b8cbf1648200f748, type: 3}
+  cookingTime: 0
   deliverable: 0
 --- !u!136 &6281938325645563564
 CapsuleCollider:
