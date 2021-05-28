@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657528, g: 0.49641275, b: 0.57481647, a: 1}
+  m_IndirectSpecularColor: {r: 0.446576, g: 0.49641335, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5722,7 +5722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[0]
@@ -5737,8 +5737,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 943764182664447782, guid: 4698899ae8ae92c4b9b700cf27124aa2, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[3]
+      value: 
+      objectReference: {fileID: 8729853339984520896, guid: 46b94a7ff136cf742ba03eee1ce98a01, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[4]
+      value: 
+      objectReference: {fileID: 6562963570862748795, guid: b09e80afa35f3744ab5ba71fd11a02f1, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plate_images.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plate_images.Array.data[0]
@@ -5752,6 +5760,14 @@ PrefabInstance:
       propertyPath: plate_images.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: ad02503f168eff34581c9ee3a71829f1, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d592b9df8057ae4b95436f8aae774bb, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: e043e3432c456694a873af8e369edac3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
 --- !u!1001 &7845757171278178008

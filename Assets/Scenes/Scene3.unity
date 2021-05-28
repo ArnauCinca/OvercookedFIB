@@ -3859,6 +3859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
+--- !u!1 &1572593174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5364726059413168716, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+  m_PrefabInstance: {fileID: 7843666152497533072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1589681443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4583,6 +4588,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1328220746}
+    - target: {fileID: 1191461109905041169, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
+      propertyPath: deliver
+      value: 
+      objectReference: {fileID: 1572593174}
     - target: {fileID: 3161565784426770398, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6445,23 +6454,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.size
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[0]
-      value: ' dish_chicken_hamburger'
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 1190529828135561940, guid: bfb9b04e940b2374ba11f5b126e4db05, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[1]
-      value: ' dish_hamburger'
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 7370503402153027103, guid: 1fc7b0fdcd84b814083ed45935360780, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plates.Array.data[2]
-      value: dish_chicken_w_onion_rings
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 943764182664447782, guid: 4698899ae8ae92c4b9b700cf27124aa2, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[3]
+      value: 
+      objectReference: {fileID: 6562963570862748795, guid: b09e80afa35f3744ab5ba71fd11a02f1, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[4]
+      value: 
+      objectReference: {fileID: 9005356348389872981, guid: 9cce1677c5ce2a547b56a0f0961e3a0e, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[5]
+      value: 
+      objectReference: {fileID: 3946408338401390548, guid: aa0d9f0c773ede6469b2417056873d8c, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[6]
+      value: 
+      objectReference: {fileID: 3946408338401390548, guid: aa0d9f0c773ede6469b2417056873d8c, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plates.Array.data[7]
+      value: 
+      objectReference: {fileID: 8729853339984520896, guid: 46b94a7ff136cf742ba03eee1ce98a01, type: 3}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plate_images.Array.size
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
       propertyPath: plate_images.Array.data[0]
@@ -6475,6 +6504,26 @@ PrefabInstance:
       propertyPath: plate_images.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: ad02503f168eff34581c9ee3a71829f1, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e043e3432c456694a873af8e369edac3, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: b5e2fb30f23772c4c860ff8a64d63bae, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: da017e26bea8d754ebad5c23bcbadeb7, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3efe3d21a2127c348a42a371eae19728, type: 3}
+    - target: {fileID: 6635584754272215128, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
+      propertyPath: plate_images.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d592b9df8057ae4b95436f8aae774bb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b671ada4003294d8382881dd7ef0fe, type: 3}
 --- !u!1001 &7845757171278178008
