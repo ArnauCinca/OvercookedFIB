@@ -24,14 +24,17 @@ public class GodMode : MonoBehaviour
         }
         if (Input.GetKeyDown("3"))
         {
+            SceneManager.LoadScene(3);
 
         }
         if (Input.GetKeyDown("4"))
         {
+            SceneManager.LoadScene(4);
 
         }
         if (Input.GetKeyDown("5"))
         {
+            SceneManager.LoadScene(5);
 
         }
 
