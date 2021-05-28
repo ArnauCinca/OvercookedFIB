@@ -1217,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1225,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2437,7 +2437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 14.04
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2445,7 +2445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2478,7 +2478,7 @@ PrefabInstance:
     - target: {fileID: 7851974523419605903, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: spawnObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8790536173156578019, guid: 9c7f438f3f8838b46bfb73020b6753ca, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
 --- !u!1 &1162439944
