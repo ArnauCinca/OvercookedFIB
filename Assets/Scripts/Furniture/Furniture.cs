@@ -10,13 +10,7 @@ abstract public class Furniture : MonoBehaviour
     protected GameObject fire;
     public bool isWorking = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        fire = null;
-        if (spawnObject != null)
-            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
-    }
+
 
     // Update is called once per frame
     public virtual void Update()

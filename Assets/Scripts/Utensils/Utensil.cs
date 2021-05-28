@@ -7,7 +7,10 @@ abstract public class Utensil : Object
     Coroutine co = null;
 
     protected GameObject go;
-    public GameObject godMode;
+    bool burnActive = true;
+
+
+
 
     public override GameObject pick()
     {
@@ -96,7 +99,10 @@ abstract public class Utensil : Object
     // Update is called once per frame
     public void Update()
     {
-
+        if (Input.GetKeyDown("n"))
+        {
+            burnActive = !burnActive;
+        }
     }
 
     public virtual GameObject cookFood() {
@@ -115,7 +121,7 @@ abstract public class Utensil : Object
             GameObject obj = cookFood();
             if (obj != null)
             {
-                if (((Food)obj.GetComponent(typeof(Food))).getType().Equals("burned_food") && ((GodMode)godMode.GetComponent(typeof(GodMode))).burnActive())
+                if (((Food)obj.GetComponent(typeof(Food))).getType().Equals("burned_food") && !burnActive)
                 {
                     Destroy(obj);
                 }

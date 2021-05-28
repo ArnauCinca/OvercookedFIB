@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Spawner : Furniture
 {
+    // Start is called before the first frame update
+    public void Start()
+    {
+        fire = null;
+        if (spawnObject != null)
+            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+    }
     public override GameObject pick() {
         GameObject ret = base.pick();
         if(ret != null) StartCoroutine(Spawn(3.0f));

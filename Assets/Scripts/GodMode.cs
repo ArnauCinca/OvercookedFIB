@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GodMode : MonoBehaviour
 {
-    bool burn = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,17 +37,9 @@ public class GodMode : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown("n"))
-        {
-            burn = !burn;
-        }
 
 
 
-    }
 
-    public bool burnActive()
-    {
-        return burn;
     }
 }

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Oven : Furniture
 {
+
+    public void Start()
+    {
+        fire = null;
+        if (spawnObject != null)
+            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
+    }
+
     // Update is called once per frame
     public override void Update()
     {
