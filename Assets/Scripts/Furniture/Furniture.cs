@@ -15,7 +15,7 @@ abstract public class Furniture : MonoBehaviour
     {
         fire = null;
         if (spawnObject != null)
-            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
+            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -138,7 +138,7 @@ abstract public class Furniture : MonoBehaviour
 
     public void StartFire() {
         if (spawnFire != null && !hasFire())
-            fire = Instantiate(spawnFire, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
+            fire = Instantiate(spawnFire, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
     }
 
     public void StopFire() {
