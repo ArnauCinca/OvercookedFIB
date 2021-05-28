@@ -4981,6 +4981,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1328220746}
+    - target: {fileID: 1191461109905041169, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
+      propertyPath: delayTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3161565784426770398, guid: c770b8f96cad3ab48b2a28dc37bf6d90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

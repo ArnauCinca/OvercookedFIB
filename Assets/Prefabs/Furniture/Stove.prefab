@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 3924398593095212671, guid: 0caca1bf3969941429ab65f6b6a077c8, type: 3}
+  spawnFire: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
   isWorking: 0
 --- !u!1001 &2329636119123360415
 PrefabInstance:

@@ -215,7 +215,7 @@ MonoBehaviour:
   deliver: {fileID: 0}
   plate: {fileID: 2508940329661300774, guid: 96677485817e184498a2246ce54d013e, type: 3}
   delay: 0.2
-  delayTime: 1
+  delayTime: 2
   rotation_speed: 5
   collision_speed: 1
   actual_speed_x: 0
