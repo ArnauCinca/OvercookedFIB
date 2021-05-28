@@ -9,7 +9,7 @@ abstract public class Utensil : Object
     protected GameObject go;
     bool burnActive = true;
 
-
+    public AudioSource source;
 
 
     public override GameObject pick()
@@ -93,7 +93,7 @@ abstract public class Utensil : Object
     // Start is called before the first frame update
     public void Start()
     {
-
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
