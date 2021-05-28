@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Oven : Furniture
 {
+    private AudioSource source;
+    private bool r=false;
 
     public void Start()
     {
+        source = GetComponent<AudioSource>();
+
         fire = null;
         if (spawnObject != null)
             o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
@@ -17,6 +21,18 @@ public class Oven : Furniture
     {
         base.Update();
         gameObject.transform.GetChild(1).gameObject.SetActive(isWorking);
+
+        if (isWorking && !r)
+        {
+            Debug.Log("Play");
+            source.Play();
+            r = true;
+        }
+        else if (!isWorking && r)
+        {
+            source.Stop();
+            r = false;
+        }
     }
 
     public override bool action(GameObject go)
