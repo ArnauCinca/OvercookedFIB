@@ -104,6 +104,7 @@ MonoBehaviour:
   C1R: {fileID: 0}
   C2: {fileID: 0}
   C2R: {fileID: 0}
+  cookingTime: 0
   deliverable: 0
 --- !u!136 &467275724507706829
 CapsuleCollider:
@@ -114,7 +115,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 7573863407561210146}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1

@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a82df2b11242ccf48949a393d52725fb, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   Cutted_Food: {fileID: 0}
   Stove_Food: {fileID: 2388891884115707868, guid: 33f148686742512489968afb7a433ac5, type: 3}
   Oven_Food: {fileID: 2388891884115707868, guid: 33f148686742512489968afb7a433ac5, type: 3}
-  Burned_Food: {fileID: 0}
   type: cooked_steak
   C1: {fileID: 1734571978465138979, guid: 9ad3a04d6daac6f429622b5259d0c710, type: 3}
   C1R: {fileID: 8729853339984520896, guid: 46b94a7ff136cf742ba03eee1ce98a01, type: 3}
@@ -116,7 +115,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2611025694524914459}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
