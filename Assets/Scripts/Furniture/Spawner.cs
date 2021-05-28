@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Spawner : Furniture
 {
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (spawnObject != null)
+            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public override GameObject pick() {
         GameObject ret = base.pick();
@@ -35,7 +47,7 @@ public class Spawner : Furniture
     protected IEnumerator Spawn(float delay)
     {
         yield return new WaitForSeconds(delay);
-        o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
+        o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
     }
 
 }
