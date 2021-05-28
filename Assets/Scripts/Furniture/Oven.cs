@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Oven : Furniture
 {
+    // Update is called once per frame
+    public override void Update()
+    {
+        base.Update();
+        gameObject.transform.GetChild(1).gameObject.SetActive(isWorking);
+    }
 
     public override bool action(GameObject go)
     {
@@ -14,4 +20,15 @@ public class Oven : Furniture
         }
         return true;
     }
+
+    public override GameObject leave(GameObject go)
+    {
+        o = go;
+        ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
+        Debug.Log("A");
+        ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+
+        return null;
+    }
+
 }

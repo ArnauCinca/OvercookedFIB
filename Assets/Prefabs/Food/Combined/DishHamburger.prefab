@@ -120,6 +120,7 @@ MonoBehaviour:
   C1R: {fileID: 0}
   C2: {fileID: 0}
   C2R: {fileID: 0}
+  cookingTime: 0
   deliverable: 0
 --- !u!1001 &3041614196238123966
 PrefabInstance:

@@ -284,7 +284,7 @@ public class playerMovement : MonoBehaviour
 
         }
         if (carryingObject != null) {
-            ((Object)carryingObject.GetComponent(typeof(Object))).move(new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z));
+            ((Object)carryingObject.GetComponent(typeof(Object))).move(new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z));
         }
 
 

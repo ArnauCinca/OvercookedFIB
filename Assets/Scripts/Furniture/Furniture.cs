@@ -19,7 +19,7 @@ abstract public class Furniture : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (isWorking) {
             if (o != null && o.GetComponent(typeof(Utensil)) != null) {
@@ -129,12 +129,7 @@ abstract public class Furniture : MonoBehaviour
         else //no food no utensil -> leave
         {
 
-            o = go;
-            ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
-            Debug.Log("A");
-            if (o.GetComponent(typeof(Utensil)) != null) ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
-
-            return null;
+            return leave(go);
         }
 
         return go;
@@ -151,6 +146,15 @@ abstract public class Furniture : MonoBehaviour
         fire = null;
     }
 
+    public virtual GameObject leave(GameObject go)
+    {
+        o = go;
+        ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 2.0f, 0.0f));
+        Debug.Log("A");
+        if (o.GetComponent(typeof(Utensil)) != null) ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+
+        return null;
+    }
  
     public abstract bool action(GameObject go);
 
