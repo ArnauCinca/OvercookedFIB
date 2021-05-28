@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.446576, g: 0.49641335, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657528, g: 0.49641275, b: 0.57481647, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2114112197385515978, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
 --- !u!1 &47642425
@@ -1213,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1221,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1264,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oven_Stove
       objectReference: {fileID: 0}
+    - target: {fileID: 2699523812999543119, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     - target: {fileID: 3216832546407289486, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1943,6 +1951,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2114112197385515978, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
 --- !u!1001 &853069724
@@ -2409,7 +2421,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5883310671210630253, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_Name
-      value: Table (28)
+      value: Table_fire_extinguisher
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_RootOrder
@@ -2425,7 +2437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 14.04
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2433,7 +2445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6731981315288555314, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2463,6 +2475,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7851974523419605903, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
+      propertyPath: spawnObject
+      value: 
+      objectReference: {fileID: 8790536173156578019, guid: 9c7f438f3f8838b46bfb73020b6753ca, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d56b8774fcc47384ab5f6d9c8c85a0ab, type: 3}
 --- !u!1 &1162439944
@@ -3175,6 +3191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oven_Stove (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2699523812999543119, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     - target: {fileID: 3216832546407289486, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -3471,6 +3491,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2114112197385515978, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
 --- !u!1001 &1628654856
@@ -4000,6 +4024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oven_Stove (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2699523812999543119, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     - target: {fileID: 3216832546407289486, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -4520,6 +4548,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2114112197385515978, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 216c7d46593b9154b823663c1f7404d7, type: 3}
 --- !u!1 &1880798050
@@ -5209,6 +5241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oven_Stove (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2699523812999543119, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
+      propertyPath: spawnFire
+      value: 
+      objectReference: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
     - target: {fileID: 3216832546407289486, guid: d92be8164f66ec9479cc88d7e1bab47b, type: 3}
       propertyPath: m_RootOrder
       value: 47

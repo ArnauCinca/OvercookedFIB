@@ -4,19 +4,6 @@ using UnityEngine;
 
 public class Spawner : Furniture
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (spawnObject != null)
-            o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public override GameObject pick() {
         GameObject ret = base.pick();
         if(ret != null) StartCoroutine(Spawn(3.0f));
@@ -39,7 +26,7 @@ public class Spawner : Furniture
         return go;
     }
 
-    public override bool action()
+    public override bool action(GameObject go)
     {
         return false;
     }
