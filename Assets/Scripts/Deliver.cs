@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Deliver : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI uiText;
-    protected string[] plates;
+    public UnityEngine.UI.Image img;
+    public string[] plates;
+    public Sprite[] plate_images;
     protected int index_plates;
+
     // Start is called before the first frame update
     void Start()
     {
-        plates = new string[6] { "bread", "chicken", "onion", "lettuce", "meat", "potato"};
+        //plates = new string[6] { "dish_chicken_hamburger", "dish_hamburger", "dish_chicken_hamburger", "dish_hamburger", "dish_chicken_hamburger", "dish_hamburger" };
         RandomSortPlates();
         //foreach (var h in plates) Debug.Log(h);
         index_plates = 0;
@@ -20,7 +22,7 @@ public class Deliver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uiText.text = foodToServe();
+        img.sprite = plate_images[index_plates];
     }
 
     public void RandomSortPlates() {
@@ -30,6 +32,9 @@ public class Deliver : MonoBehaviour
             string temp = plates[i];
             plates[i] = plates[randomIndex];
             plates[randomIndex] = temp;
+            Sprite temp2 = plate_images[i];
+            plate_images[i] = plate_images[randomIndex];
+            plate_images[randomIndex] = temp2;
         }
     }
 
