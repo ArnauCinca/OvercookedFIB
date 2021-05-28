@@ -38,7 +38,7 @@ public class playerMovement : MonoBehaviour
         actual_speed_x = speed;
         actual_speed_y = speed;
         transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
-        timeRemaining = 120f;
+        timeRemaining = 1200f;
         movement = true;
 
     }
