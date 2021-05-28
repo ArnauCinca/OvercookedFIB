@@ -27,7 +27,7 @@ public class Spawner : Furniture
         return go;
     }
 
-    public override bool action()
+    public override bool action(GameObject go)
     {
         return false;
     }

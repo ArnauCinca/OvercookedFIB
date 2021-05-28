@@ -6,11 +6,14 @@ abstract public class Furniture : MonoBehaviour
 {
     public GameObject spawnObject;
     protected GameObject o;
+    public GameObject spawnFire;
+    protected GameObject fire;
     public bool isWorking = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        fire = null;
         if (spawnObject != null)
             o = Instantiate(spawnObject, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
     }
@@ -18,7 +21,21 @@ abstract public class Furniture : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isWorking) {
+            if (o != null && o.GetComponent(typeof(Utensil)) != null) {
+                GameObject foodP = ((Utensil)o.GetComponent(typeof(Utensil))).getFoodInfo();
+                if (foodP != null) {
+                    if (((Food)foodP.GetComponent(typeof(Food))).getType().Equals("burned_food")) {
+                        StartFire();
+                    }
+                }
+            }
+        }
 
+    }
+
+    public bool hasFire() {
+        return fire != null;
     }
 
     public GameObject getObject() {
@@ -27,8 +44,14 @@ abstract public class Furniture : MonoBehaviour
 
     public virtual GameObject pick()
     {
+        if (hasFire()) return null;
         if(o != null && o.GetComponent(typeof(Utensil)) != null) {
             ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(false);
+            GameObject ret = o;
+            o = null;
+            return ret;
+        }
+        if(o != null && o.GetComponent(typeof(Fire_Extinguisher)) != null) {
             GameObject ret = o;
             o = null;
             return ret;
@@ -38,12 +61,13 @@ abstract public class Furniture : MonoBehaviour
 
     public virtual GameObject interact(GameObject go)
     {
-        
+        if (hasFire()) return go;
         if (o != null)
         {
             if (o.GetComponent(typeof(Utensil)) != null)
             {
-                bool hasFoodP = ((Utensil)go.GetComponent(typeof(Utensil))).hasFood();
+                bool hasFoodP = false;
+                if (go.GetComponent(typeof(Utensil)) != null) hasFoodP = ((Utensil)go.GetComponent(typeof(Utensil))).hasFood();
                 bool hasFoodF = ((Utensil)o.GetComponent(typeof(Utensil))).hasFood();
 
                 if (hasFoodP)
@@ -108,7 +132,7 @@ abstract public class Furniture : MonoBehaviour
             o = go;
             ((Object)o.GetComponent(typeof(Object))).leave(transform.position + new Vector3(0.0f, 1.0f, 0.0f));
             Debug.Log("A");
-            ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
+            if (o.GetComponent(typeof(Utensil)) != null) ((Utensil)o.GetComponent(typeof(Utensil))).action_aux(isWorking);
 
             return null;
         }
@@ -117,8 +141,18 @@ abstract public class Furniture : MonoBehaviour
 
     }
 
+    public void StartFire() {
+        if (spawnFire != null && !hasFire())
+            fire = Instantiate(spawnFire, new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z), Quaternion.identity);
+    }
+
+    public void StopFire() {
+        Destroy(fire);
+        fire = null;
+    }
+
  
-    public abstract bool action();
+    public abstract bool action(GameObject go);
 
     
 }

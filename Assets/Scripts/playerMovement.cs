@@ -168,7 +168,7 @@ public class playerMovement : MonoBehaviour
                 {
                     delayInteraction = true;
                     StartCoroutine(Delay(delay));
-                    ((Furniture)go.GetComponent(typeof(Furniture))).action();
+                    ((Furniture)go.GetComponent(typeof(Furniture))).action(carryingObject);
                 }
             } else if  (go.CompareTag("Deliver"))
             {

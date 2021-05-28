@@ -55,6 +55,11 @@ abstract public class Utensil : Object
         return go != null;
     }
 
+    public GameObject getFoodInfo()
+    {
+        return go;
+    }
+
     public abstract bool action();
 
     public virtual void action_aux(bool isWorking)

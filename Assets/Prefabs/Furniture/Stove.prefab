@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2930369781343366040}
   - component: {fileID: 2114112197385515978}
   m_Layer: 0
-  m_Name: Stove_pan
+  m_Name: Stove
   m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObject: {fileID: 3924398593095212671, guid: 0caca1bf3969941429ab65f6b6a077c8, type: 3}
+  spawnFire: {fileID: 1000011671376998, guid: 28fbc97a4e7e92144af43a4bd05be737, type: 3}
+  isWorking: 0
